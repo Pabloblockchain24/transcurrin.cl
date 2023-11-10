@@ -1,0 +1,74 @@
+.mainServicios{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+
+}
+
+.serviciosGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-inline: 3%;
+}
+
+.serviciosCard{
+    margin: 7%;
+    background-color: rgb(231, 231, 231);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    padding-bottom: 10%;
+}
+
+.serviciosCard:hover{
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+.imgFormat{
+    width: 100%;
+}
+
+.title{
+    margin: 2%;
+    font-size: xx-large;
+    text-align: center;
+    font-weight: bold;
+}
+
+.titleCard{
+    font-size: large;
+    margin: 8%;
+    font-weight: bold;
+}
+
+.parrafoCard{
+    margin: 8%;
+    text-align: justify;
+}
+
+.customButton{
+    background-color: #b89d69;
+    color: black;
+    margin: 5%;
+    padding: 3%;
+    width: 50%;
+    border-radius: 60px;
+    border: none;
+
+}
+
+
+
+.customButton:hover{
+    border: 1px solid black;
+    font-weight: bolder;
+}
+
+
+@media screen and (max-width: 768px) {
+    .serviciosGrid{
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6,1fr);
+    }
+}

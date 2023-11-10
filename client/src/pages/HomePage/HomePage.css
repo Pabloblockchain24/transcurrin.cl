@@ -1,0 +1,60 @@
+.clientesHomePage{
+    padding: 20% !important;
+}
+.customBanner{
+    background-image: url("../../assets/camiones.jpg");
+    background-size: cover;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.customSlogan{
+    background-color: rgb(199, 184, 156);
+    padding: 30px;
+    font-size: 150%;
+    opacity: 0.9;
+}
+
+.contadores{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-inline: 3%;
+    margin-block: 5%;
+    padding: 3%;
+}
+
+.itemCount{
+    font-size: 300%;
+    font-weight: bolder;
+    color: black;
+    text-align: center;
+    padding: 10%;
+    border: 5px rgb(199, 184, 157) solid;
+    border-radius: 50%;
+}
+
+article{
+    text-align: center;
+}
+.parrafo{
+    font-weight: bolder;
+    margin-top: 70px;
+}
+
+@media screen and (max-width: 992px) {
+    .contadores{
+        flex-direction: column;
+        gap: 100px;
+        margin-top: 50px;
+    }
+    p{
+        margin-top: 60px;
+
+    }
+
+}

@@ -1,0 +1,46 @@
+.equiposCard{
+    margin: 5%;
+    background-color: rgb(231, 231, 231);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    padding-bottom: 10%;
+}
+
+.equiposCard:hover{
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+
+.equiposGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin: 3;
+}
+
+.nameCard{
+    font-size: large;
+    margin: 6%;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 992px) {
+    .equiposGrid{
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(6,1fr);
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .equiposGrid{
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6,1fr);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .equiposGrid{
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6,1fr);
+    }
+}

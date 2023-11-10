@@ -1,0 +1,27 @@
+.clientes{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.clientCard{
+    margin: 5%;
+    background-color: whitesmoke;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    padding-bottom: 2%;
+    width: auto;
+}
+
+
+.clientName{
+    text-align: center;
+    margin: 10%;
+    font-weight: bolder;
+    font-size: x-large;
+    
+}
+
+.clientText{
+    font-style: italic;
+    margin: 15%;
+}

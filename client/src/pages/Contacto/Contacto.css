@@ -1,0 +1,17 @@
+.contactoPage{
+    background-image: url("../../assets/bg-contact.jpg");
+    background-color: rgba(114, 101, 59, 0.8);
+    background-blend-mode: multiply;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.check{
+    background-color: yellow;
+}

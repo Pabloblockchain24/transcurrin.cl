@@ -20,10 +20,8 @@ import DepEqu from "./pages/DepEqu/DepEqu";
 import Clientes from "./pages/Clientes/Clientes"
 import Intranet from "./pages/Intranet/Intranet";
 
-import axios from "axios";
 
 function App() {
-  axios.defaults.withCredentials = true;
 
   return (
     <AuthProvider>

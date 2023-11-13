@@ -11,6 +11,7 @@ const app = express()
 
 app.use(cors({
     origin: ["https://transcurrin-cl-client.vercel.app"],
+    methods: ["POST", "GET"],
     credentials:true
 }))
 

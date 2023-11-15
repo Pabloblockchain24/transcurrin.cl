@@ -21,6 +21,13 @@
     width: 66.66%;
 }
 
+.nav-list{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        
+        align-items: flex-end;
+}
 
 @media screen and (max-width:550px){
     .abrirMenu{

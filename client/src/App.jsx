@@ -10,7 +10,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import ProfilePage from "./pages/ProfilePage";
 import ProtectedRoute from "./ProtectedRoute"
 import { IntranetProvider } from "./context/IntranetContext";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 
 import Servicios from "./pages/Servicios/Servicios"

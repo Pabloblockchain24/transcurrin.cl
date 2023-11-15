@@ -31,7 +31,6 @@ function Navbar() {
                     //     </li>
                     // </>
                 ) : (
-                    <>
                         {/* <li>
                                 <Link to="/login">LOGIN</Link>
                             </li>
@@ -44,7 +43,6 @@ function Navbar() {
                         <NavLink to={"/categoria/CLIENTES"} className="customNavLink"> CLIENTES </NavLink>
                         <NavLink to={"/categoria/CONTACTO"} className="customNavLink"> CONTACTO </NavLink>
                         <NavLink to={"/login"} className=" flex flew-row justify-center text-white bg-zinc-400  p-5 rounded-lg font-bold hover:bg-zinc-600 ">PORTAL CLIENTES</NavLink>
-                    <>
                 )
                 }
             </section>

@@ -31,7 +31,7 @@ function Navbar() {
                     //     </li>
                     // </>
                 ) : (
-                    <nav className='nav-list'>
+                    <nav className=''>
                         {/* <li>
                                 <Link to="/login">LOGIN</Link>
                             </li>

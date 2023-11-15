@@ -31,18 +31,14 @@ function Navbar() {
                     //     </li>
                     // </>
                 ) : (
-                        {/* <li>
-                                <Link to="/login">LOGIN</Link>
-                            </li>
-                            <li>
-                                <Link to="/register">REGISTER</Link>
-                            </li> */}
+                    <>
                         <NavLink to={"/categoria/NOSOTROS"} className="customNavLink"> NOSOTROS </NavLink>
                         <NavLink to={"/categoria/DEPOSITOEQUIPOS"} className="customNavLink"> DEPOSITO & EQUIPOS</NavLink>
                         <NavLink to={"/categoria/SERVICIOS"} className="customNavLink"> SERVICIOS </NavLink>
                         <NavLink to={"/categoria/CLIENTES"} className="customNavLink"> CLIENTES </NavLink>
                         <NavLink to={"/categoria/CONTACTO"} className="customNavLink"> CONTACTO </NavLink>
                         <NavLink to={"/login"} className=" flex flew-row justify-center text-white bg-zinc-400  p-5 rounded-lg font-bold hover:bg-zinc-600 ">PORTAL CLIENTES</NavLink>
+                    </>
                 )
                 }
             </section>

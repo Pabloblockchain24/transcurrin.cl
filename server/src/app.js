@@ -10,8 +10,10 @@ import intranetRoutes from "./routes/intranet.routes.js"
 const app = express()
 
 app.use(cors({
-    origin: "https://transcurrin-cl-client.vercel.app",
-    credentials:true
+    origin: 'https://transcurrin-cl-client.vercel.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
 }))
 
 app.use(express.json())

@@ -12,7 +12,7 @@
             "dest": "*.js",
             "methods": ["GET","POST","PUT","DELETE","PATCH","OPTIONS"],
             "headers": {
-                "Access-Control-Allow-Origin": "*"
+                "Access-Control-Allow-Origin": "https://transcurrin-cl-client.vercel.app"
             }
         }
     ]

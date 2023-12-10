@@ -16,15 +16,15 @@ function Footer() {
         </footer>
         <section className="footer">
           <article className="customArticle">
-            <h6>CONTACTO</h6>
+            <p className="customPTitle">CONTACTO</p>
             <p className="customP"> +569 5072 7028</p>
           </article>
           <article className="customArticle">
-            <h6>DEPOSITO Y OPERACIONES</h6>
+            <p className="customPTitle">DEPOSITO Y OPERACIONES</p>
             <p className="customP">LAS ACACIAS 315 AGUAS BUENAS , SAN ANTONIO</p>
           </article>
           <article className="customArticle">
-            <h6>OFICINA COMERCIAL </h6>
+            <p className="customPTitle">OFICINA COMERCIAL </p>
             <p className="customP">BLANCO ENCALADA #750, SAN ANTONIO</p>
           </article>
           <hr className="footerLine" />
@@ -34,7 +34,7 @@ function Footer() {
         </section>
         <section className="section footer">
           <article className="customArticle2">
-            <h6>MAIL CONTACTO</h6>
+            <p className="customPTitle">MAIL CONTACTO</p>
             <p className="customP"> parce@transcurrin.cl</p>
             <p className="customP"> contacto@transcurrin.cl</p>
           </article>

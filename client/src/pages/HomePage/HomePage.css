@@ -1,15 +1,155 @@
+
+
+
+/* Estilos para las flechas */
+
+
+.slick-prev:before{
+    color: white; /* Color de las flechas */
+    font-size: 20px; /* Tamaño de la fuente de las flechas */
+}
+
+.slick-next:before {
+  color: white; /* Color de las flechas */
+  font-size: 30px; /* Tamaño de la fuente de las flechas */
+}
+
+
+
+/* Opcional: Estilos adicionales para posicionar las flechas */
+.slick-prev {
+  left: 1px; /* Ajusta la posición izquierda de la flecha anterior */
+}
+.slick-next {
+  right: 50px; /* Ajusta la posición derecha de la flecha siguiente */
+
+}
+
+
+.customBanner{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/camiones.jpg");
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(100px); /* Efecto visual de desenfoque */
+    background-blend-mode: multiply;
+    background-size: cover;
+    height: 70vh;
+}
+
+.customBanner2{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/banner2.jpg");
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(100px); /* Efecto visual de desenfoque */
+    background-blend-mode: multiply;
+    background-size: cover;
+    height: 70vh;
+}
+.customBanner3{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/banner3.jpg");
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(100px); /* Efecto visual de desenfoque */
+    background-blend-mode: multiply;
+    background-size: cover;
+    height: 70vh;
+}
+
+
+.aux{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12%;;
+    gap: 5%
+}
+
+.sectionPadre{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.customSection1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    width: 80%;
+    margin-top: 2%;
+}
+
+.customSection3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center !important;
+    width: 80%;
+    margin-top: 2%;
+}
+
+.customMap{
+    margin: 3%;
+    width: 100%;
+}
+.imgCompromiso{
+    width: 60%;
+    border-radius: 50%;
+}
+
+.articleCompromiso{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    margin-inline: 3%;
+
+}
+
+.titleCompromiso{
+    margin-block: 5%;
+    font-weight: bold;
+    font-size: large;
+}
+
+.descriptionCompromiso{
+    text-align: justify;
+}
+
+.section2{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    margin-block: 5%;
+}
+.descriptionCardsSection1{
+    text-align: justify;
+}
+
+.customTitleSection1{
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.articleContadores{
+    width: 25%;
+}
+
+
+.footerLine1{
+    width:100%; 
+    margin: 1.5%;
+}
+
 .clientesHomePage{
     padding: 20% !important;
 }
-.customBanner{
-    background-image: url("../../assets/camiones.jpg");
-    background-size: cover;
-    height: 60vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
+
 
 .customSlogan{
     background-color: rgb(199, 184, 156);
@@ -18,32 +158,54 @@
     opacity: 0.9;
 }
 
+.customTitleBanner{
+    font-size: xxx-large;
+    font-weight: bold;
+    color: white
+}
+.customTitleBanner2{
+    font-size: xx-large;
+    color: white;
+
+}
+
+.buttonBanner{
+    background-color: rgb(253, 177, 0);
+    margin-top: 2%;
+    padding: 1%;
+    font-weight: bold;
+    border-radius: 0.375rem;
+
+}
+
 .contadores{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
     margin-inline: 3%;
-    margin-block: 5%;
-    padding: 3%;
+    margin-block: 2%;
+    padding: 1%;
+    gap: 5%;
 }
 
 .itemCount{
-    font-size: 300%;
+    font-size: 400%;
     font-weight: bolder;
-    color: black;
+    color: rgb(253, 177, 0);
     text-align: center;
     padding: 10%;
-    border: 5px rgb(199, 184, 157) solid;
+    /* border: 5px rgb(253, 177, 0) solid; */
+
     border-radius: 50%;
 }
 
 article{
     text-align: center;
 }
-.parrafo{
+.titleCardsSection1{
     font-weight: bolder;
-    margin-top: 70px;
+    margin: 5%;
 }
 
 @media screen and (max-width: 992px) {

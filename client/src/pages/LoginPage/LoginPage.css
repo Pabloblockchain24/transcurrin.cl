@@ -1,5 +1,11 @@
 .loginPage{
     background-image: url("../../assets/login.jpg");
+
+    background-color: rgba(41, 41, 41, 0.9);
+    backdrop-filter: blur(100px); /* Efecto visual de desenfoque */
+    background-blend-mode: multiply;
+    background-size: cover;
+
     display: flex;
     flex-direction: row;
     justify-content: center;

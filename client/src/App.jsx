@@ -4,7 +4,6 @@ import RegisterPage from "./pages/RegisterPage"
 import LoginPage from "./pages/LoginPage/LoginPage"
 
 
-import ServicePage from "./pages/ServicePage";
 import ServiceFormPage from "./pages/ServiceFormPage";
 import HomePage from "./pages/HomePage/HomePage";
 import ProfilePage from "./pages/ProfilePage";
@@ -19,6 +18,7 @@ import Contacto from "./pages/Contacto/Contacto"
 import DepEqu from "./pages/DepEqu/DepEqu";
 import Clientes from "./pages/Clientes/Clientes"
 import Intranet from "./pages/Intranet/Intranet";
+import ScrollToTop from './components/ScrollToTop';
 
 
 function App() {
@@ -27,7 +27,11 @@ function App() {
     <AuthProvider>
       <IntranetProvider>
         <BrowserRouter>
+        <ScrollToTop />
+
           <Navbar/>
+          <hr />
+
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />

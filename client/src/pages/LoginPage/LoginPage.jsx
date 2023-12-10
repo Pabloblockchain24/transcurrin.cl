@@ -24,7 +24,7 @@ function LoginPage() {
     <div className="loginPage">
 
 
-      <div className="bg-zinc-800 flex flex-col items-center justify-center max-w-md w-full p-10 shadow-md rounded-md">
+      <div className="bg-zinc-900 flex flex-col items-center justify-center max-w-md w-full p-10 shadow-md rounded-md">
 
         <h1 className="text-3xl	 font-bold mb-10 mt-5 text-white"> ACCESO CLIENTES </h1>
 

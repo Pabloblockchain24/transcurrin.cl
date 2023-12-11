@@ -25,14 +25,9 @@ function Navbar() {
             <section className='navbarCustom'>
                 {isAuthenticated ? (
                     <div className='nav-list'>
-                    <NavLink to={"/categoria/NOSOTROS"} className="customNavLink"> NOSOTROS </NavLink>
-                    <NavLink to={"/categoria/DEPOSITOEQUIPOS"} className="customNavLink"> DEPOSITO & EQUIPOS</NavLink>
-                    <NavLink to={"/categoria/SERVICIOS"} className="customNavLink"> SERVICIOS </NavLink>
-                    <NavLink to={"/categoria/CLIENTES"} className="customNavLink"> CLIENTES </NavLink>
-                    <NavLink to={"/categoria/CONTACTO"} className="customNavLink"> CONTACTO </NavLink>
 
-
-                    <div> BIENVENIDO {user.name} ! </div>
+                    <div className='bienvenido'> BIENVENIDO {user.name} ! </div>
+                    <Link className="text-center font-bold customLogItem" to="/" onClick={() => { logout() }}> Logout</Link>
 
 
 

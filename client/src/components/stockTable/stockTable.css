@@ -1,0 +1,7 @@
+.customTable{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-inline: auto;
+    margin-top: 2%;
+}

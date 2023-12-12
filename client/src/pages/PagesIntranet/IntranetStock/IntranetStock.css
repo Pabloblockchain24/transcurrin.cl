@@ -1,0 +1,12 @@
+.titleIntranet{
+    font-size: large;
+    margin-top: 2%;
+    font-weight: bold;
+}
+
+.boxPadre{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

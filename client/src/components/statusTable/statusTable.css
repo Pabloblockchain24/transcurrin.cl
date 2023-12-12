@@ -1,8 +1,11 @@
-.customTable{
-    width: 90%;
+.customTableStatus{
+    width: 70%;
     display: flex;
     flex-direction: column;
     margin-inline: auto;
     margin-top: 2%;
-    background-color: rgb(209, 207, 204);
+}
+
+.centrarElemento{
+    margin-inline: auto;
 }

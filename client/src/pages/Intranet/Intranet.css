@@ -1,0 +1,53 @@
+.titleIntranetSummary{
+    border-bottom: 5px solid rgb(253, 177, 0);
+    font-size: large;
+    font-weight: bold;
+    margin-top: 3%;
+    padding-bottom: 0.3%;
+    width: auto;
+
+}
+
+
+.boxPadreIntranet{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+}
+
+.boxMain{
+    width: 60%;
+    margin-bottom: 5%;
+    margin-top: 2%;
+    padding: 2%;
+}
+.auxIntranetSummary{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2%;
+}
+
+.rowSummary{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5%;
+    margin: 2%;
+    font-weight: bold;
+    font-size: large;
+    width: 100%;
+}
+
+
+.sectionSummary{
+    display: flex;
+    flex-direction: column;
+    margin-top: 4%
+;
+
+
+
+    width: 100%;
+}

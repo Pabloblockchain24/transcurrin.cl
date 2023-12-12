@@ -1,12 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
-import RegisterPage from "./pages/RegisterPage"
+import RegisterPage from "./pages/Register/RegisterPage"
 import LoginPage from "./pages/LoginPage/LoginPage"
 
 
 import ServiceFormPage from "./pages/ServiceFormPage";
 import HomePage from "./pages/HomePage/HomePage";
-import ProfilePage from "./pages/ProfilePage";
 import ProtectedRoute from "./ProtectedRoute"
 import { IntranetProvider } from "./context/IntranetContext";
 import Navbar from "./components/Navbar/Navbar";
@@ -20,6 +19,10 @@ import Clientes from "./pages/Clientes/Clientes"
 import Intranet from "./pages/Intranet/Intranet";
 import ScrollToTop from './components/ScrollToTop';
 
+import IntranetStock from "./pages/PagesIntranet/IntranetStock/IntranetStock";
+import IntranetProgramacion from "./pages/PagesIntranet/IntranetProgramacion/IntranetProgramacion";
+import IntranetStatus from "./pages/PagesIntranet/IntranetStatus/IntranetStatus";
+import IntranetFacturacion from "./pages/PagesIntranet/IntranetFacturacion/IntranetFacturacion";
 
 
 function App() {
@@ -47,9 +50,13 @@ function App() {
             
             <Route element={<ProtectedRoute />}>
               <Route path="/intranet" element={<Intranet />} />
-              <Route path="/add-service" element={<ServiceFormPage />} />
-              <Route path="/intranet/:id" element={<ServiceFormPage />} />
-              <Route path="/profile" element={<ProfilePage />} />
+              <Route path="/intranet/stock" element={<IntranetStock />} />
+              <Route path="/intranet/programacion" element={<IntranetProgramacion />} />
+              <Route path="/intranet/status" element={<IntranetStatus />} />
+              <Route path="/intranet/facturacion" element={<IntranetFacturacion />} />
+
+              
+              {/* <Route path="/intranet/:id" element={<ServiceFormPage />} /> */}
             </Route>
           
           </Routes>

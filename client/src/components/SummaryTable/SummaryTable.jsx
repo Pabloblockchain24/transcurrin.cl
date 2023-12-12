@@ -8,7 +8,7 @@ function SummaryTable() {
     return (
         <>
             <div className='customTableSummary'>
-                <table className='table  table-borderless  table-hover'>
+                <table className='table  table-borderless'>
 
                     <tbody>
                         <tr>

@@ -2,8 +2,6 @@ import React from 'react'
 import { NavLink, Link } from "react-router-dom"
 
 import "bootstrap/dist/css/bootstrap.min.css"
-
-import "./stockPuertoTable.css"
 import { useIntranet } from "../../context/IntranetContext"
 import { useEffect } from "react";
 

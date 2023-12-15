@@ -23,7 +23,9 @@ import IntranetStock from "./pages/PagesIntranet/IntranetStock/IntranetStock";
 import IntranetProgramacion from "./pages/PagesIntranet/IntranetProgramacion/IntranetProgramacion";
 import IntranetStatus from "./pages/PagesIntranet/IntranetStatus/IntranetStatus";
 import IntranetFacturacion from "./pages/PagesIntranet/IntranetFacturacion/IntranetFacturacion";
-
+import IntranetStockPuerto from "./pages/PagesIntranet/IntranetStockPuerto/IntranetStockPuerto";
+import IntranetVacios from "./pages/PagesIntranet/IntranetVacios/IntranetVacios";
+import IntranetTransitoMaritimo from "./pages/PagesIntranet/IntranetTransitoMaritimo/IntranetTransitoMaritimo";
 
 function App() {
 
@@ -51,13 +53,17 @@ function App() {
             <Route element={<ProtectedRoute />}>
               <Route path="/intranet" element={<Intranet />} />
               <Route path="/intranet/stock" element={<IntranetStock />} />
+              <Route path="/intranet/stockPuerto" element={<IntranetStockPuerto />} />
               <Route path="/intranet/programacion" element={<IntranetProgramacion />} />
               <Route path="/intranet/status" element={<IntranetStatus />} />
-              <Route path="/intranet/facturacion" element={<IntranetFacturacion />} />
+              <Route path="/intranet/vacios" element={<IntranetVacios />} />
 
+              <Route path="/intranet/facturacion" element={<IntranetFacturacion />} />
+              <Route path="/intranet/transitoMaritimo" element={<IntranetTransitoMaritimo />} />
               
               {/* <Route path="/intranet/:id" element={<ServiceFormPage />} /> */}
             </Route>
+
           
           </Routes>
           

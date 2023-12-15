@@ -3,12 +3,14 @@ import { NavLink, Link } from "react-router-dom"
 
 import "bootstrap/dist/css/bootstrap.min.css"
 
-import "./stockTable.css"
+import "./stockPuertoTable.css"
 import { useIntranet } from "../../context/IntranetContext"
 import { useEffect } from "react";
 
 
-function StockTable() {
+
+
+function StockPuertoTable() {
 
     const { getServices, services } = useIntranet()
 
@@ -28,11 +30,15 @@ function StockTable() {
         return `${dia}-${mes}-${año}`;
       };
 
-    const diasEnDepot = (fechaISO) => {
-        const fechaRetiro = new Date(fechaISO);
+
+
+
+    const diasEnPuerto = (fechaISO) => {
+        const fechaEta = new Date(fechaISO);
         const fechaHoy = new Date()
-        const diferenciaMilisegundos = fechaHoy - fechaRetiro
+        const diferenciaMilisegundos = fechaHoy - fechaEta
         return (Math.ceil(diferenciaMilisegundos/(1000*60*60*24)))
+
     }
 
     const demurrage = (fechaISO, diasLibres) =>{
@@ -44,49 +50,37 @@ function StockTable() {
         return `${dia}-${mes}-${año}`;
     }
 
-    const serviciosEnDepot = services.filter(servicio => {
-        return servicio.retiroPuerto !== null && servicio.entrega === null;
+    const serviciosEnPuerto = services.filter(servicio => {
+        return servicio.retiroPuerto === null && diasEnPuerto(servicio.eta) > 0
       });
-    
-    
-    
-    if (serviciosEnDepot.length === 0) return (<div className='customVacio'><h1> OOOPS ... NO HAY UNIDADES EN STOCK</h1></div>)
+
+    if (serviciosEnPuerto.length === 0) return (<div className='customVacio'><h1> OOOPS ... NO HAY UNIDADES EN PUERTO</h1></div>)
 
     return (
         <div className='customTable'>
             <table className='table table-striped table-bordered table-hover'>
                 <thead>
                     <tr>
-                        <th>RETIRO PUERTO</th>
-                        <th> NAVE</th>
                         <th> CARPETA</th>
+                        <th> NAVE</th>
                         <th> UNIDAD</th>
+                        <th> ETA </th>
                         <th> TIPO </th>
                         <th> DEMURRAGE</th>
-                        <th> ALMACEN DESTINO </th>
-                        <th> DIAS EN DEPOSITO </th>
-                        <th> LUGAR DEVOLUCION </th>
+                        <th> DIAS EN PUERTO </th>
                     </tr>
                 </thead>
 
                 <tbody>
-
-                        {serviciosEnDepot.map((service, index) => (
-
+                        {serviciosEnPuerto.map((service, index) => (
                             <tr key={index}>
-                                <td>
-                                    {service.retiroPuerto ? formatFecha(service.retiroPuerto) : "PENDIENTE"}
-                                </td>
-                                <td>{service.nave}</td>
                                 <td>{service.ref}</td>
+                                <td>{service.nave}</td>
                                 <td>{service.container}</td>
+                                <td>{formatFecha(service.eta)}</td>
                                 <td>{service.tipo}</td>
                                 <td>{demurrage(service.eta, service.demurrage)}</td>
-                                <td>{service.almDestino}</td>
-                                <td>
-                                {service.retiroPuerto ? diasEnDepot(service.retiroPuerto) : "PENDIENTE"}
-                                </td>
-                                <td>{service.depotDevolucion}</td>
+                                <td>{diasEnPuerto(service.eta)}</td>
 
                             </tr>
                         ))}
@@ -99,4 +93,4 @@ function StockTable() {
     )
 }
 
-export default StockTable
+export default StockPuertoTable

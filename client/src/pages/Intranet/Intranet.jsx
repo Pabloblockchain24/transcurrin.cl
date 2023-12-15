@@ -1,7 +1,9 @@
 
 import { useIntranet } from "../../context/IntranetContext";
 import { useEffect } from "react";
+
 import { useAuth } from "../../context/AuthContext";
+
 import { Link } from "react-router-dom";
 import StockTable from "../../components/stockTable/stockTable";
 
@@ -13,14 +15,37 @@ import "./Intranet.css"
 
 function Intranet() {
     const { isAuthenticated, user, logout } = useAuth()
-    const { getServices, services } = useIntranet();
 
-    useEffect(() => {
-        getServices()
-    }, [])
+    const { createService, getServices, updateService, services } = useIntranet()
+
+    // useEffect(() => {
+    //     getServices()
+    // }, [])
     // if (services.length === 0) return (<h1> NO HAY SERVICIOS</h1>)
 
 
+    useEffect(() => {
+        async function loadServices() {
+            await getServices()
+            console.log(user)
+
+        }
+        loadServices()
+    }, [])
+
+
+    if (services.length === 0) return (<h1> NO HAY SERVICIOS</h1>)
+
+    const formatFecha = (fechaISO) => {
+        const fecha = new Date(fechaISO);
+        const dia = fecha.getDate();
+        const mes = fecha.getMonth() + 1;
+        const año = fecha.getFullYear();
+        return `${dia}-${mes}-${año}`;
+      };
+
+
+    // const example = services[0].ref
     return (
         <>
             <NavBarIntranet />
@@ -28,13 +53,14 @@ function Intranet() {
             <div className="auxIntranetSummary">
                 <main className="boxMain">
                     <div className='boxPadreIntranet'>
-                        <div className='titleIntranetSummary'> RESUMEN OPERACIONAL 12-12-2023 </div>
+                        <div className='titleIntranetSummary'> RESUMEN OPERACIONAL {formatFecha(new Date())} </div>
                     </div>
-
+                    <div className="boxDataIntranet">
+                        <p className="dataIntranet"> Usuario: {user.name} </p>
+                        <p className="dataIntranet"> Compañia: {user.company} </p>
+                    </div>
                     <SummaryTable />
-
-
-
+    
 
 
 

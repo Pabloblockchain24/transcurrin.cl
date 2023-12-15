@@ -18,14 +18,15 @@
 
 .boxMain{
     width: 60%;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
     padding: 2%;
+   
 }
 .auxIntranetSummary{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 2%;
+    margin-top: 1%;
 }
 
 .rowSummary{
@@ -43,10 +44,26 @@
 .sectionSummary{
     display: flex;
     flex-direction: column;
-    margin-top: 4%
-;
-
-
-
+    margin-top: 4%;
     width: 100%;
+}
+
+.dataIntranet{
+    font-weight: bold;
+    margin-block: 0.5%;
+    padding-bottom: 0.3%;
+
+    width: auto;
+
+}
+
+.boxDataIntranet{
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;    
+    margin-top: 1.5%;
+
+
 }

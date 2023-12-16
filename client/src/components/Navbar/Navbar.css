@@ -1,51 +1,19 @@
-.customNavLink{
-    color: black;
-    font-weight: bolder;
-    font-size: large;
-}
-
-.logoNavbar{
-    min-width: 40% ;
-    max-width: 70% ;
-}
-
-.abrirMenu{
-    display: none;
-}
-
-
-.bienvenido{
-    font-weight: bold;
-    font-size: large;
-}
-.navbarCustom{
+.navbarMain{
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
-    margin-left: 10%;
-    width: 80%;
+    align-items: center;
+    background-color: transparent;
+    height: 20vh;
 }
 
-.customLogItem{
+.navbarMainBox{
     display: flex;
     flex-direction: row;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-    color: rgb(41, 41, 41);
-    background-color: rgb(253, 177, 0);
-    padding: 1.5%;
-    font-weight: bold;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    border-radius: 0.375rem;
-
-}
-.customLogItem::hover{
-    background-color: black;
+    justify-content: space-around;  
+    width: 90%;
 }
 
-
-.nav-list{
+.navbarList{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -53,17 +21,50 @@
     width: 100%;
 }
 
-.nav-list{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        
-        align-items: center;
+.navbarLink{
+    color: black;
+    font-weight: bolder;
+    font-size: large;
+}
+
+
+.navbarLogoBox{
+    width: 35%;
+    margin-right: 22%;
+}
+
+.navbarLog{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    background-color: rgb(253, 177, 0);
+    padding: 1.5%;
+    font-weight: bold;
+    border-radius: 0.375rem;
+}
+
+.navbarLogoLog{
+    width: 20px;
+}
+
+.navbarLink:hover{
+    color: rgb(253, 177, 0);
+}
+
+.navbarTitle{
+    font-weight: bold;
+    font-size: large;
+}
+
+.abrirMenu{
+    display: none;
 }
 
 @media screen and (max-width:550px){
     .abrirMenu{
         display: block;
+        width: auto;
     }
     .navbarCustom{
         display: none;
@@ -71,16 +72,31 @@
     .logoNavbar{
         width: 100%;
     }
-
     .navbarCustom{
         position: absolute;
         top:0;
         right:0;
     }
-
     .nav-list{
         display: flex;
         flex-direction: column;
         align-items: flex-end;
+    }
+}
+
+
+@media screen and (max-width:1400px){
+    .navbarMain{
+        justify-content:center;
+        width:100%
+    }
+
+    .navbarLogoBox{
+        width: 40%;
+        margin-right: 15%;
+    }
+
+    .navbarLink{
+        margin-inline: 1%;
     }
 }

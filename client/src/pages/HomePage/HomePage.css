@@ -1,9 +1,3 @@
-
-
-
-/* Estilos para las flechas */
-
-
 .slick-prev:before{
     color: white; /* Color de las flechas */
     font-size: 20px; /* Tamaño de la fuente de las flechas */
@@ -14,9 +8,6 @@
   font-size: 30px; /* Tamaño de la fuente de las flechas */
 }
 
-
-
-/* Opcional: Estilos adicionales para posicionar las flechas */
 .slick-prev {
   left: 1px; /* Ajusta la posición izquierda de la flecha anterior */
 }
@@ -25,8 +16,7 @@
 
 }
 
-
-.customBanner{
+.Banner1{
     display: flex;
     flex-direction: column;
     background-image: url("../../assets/camiones.jpg");
@@ -37,7 +27,7 @@
     height: 70vh;
 }
 
-.customBanner2{
+.Banner2{
     display: flex;
     flex-direction: column;
     background-image: url("../../assets/banner2.jpg");
@@ -47,7 +37,7 @@
     background-size: cover;
     height: 70vh;
 }
-.customBanner3{
+.Banner3{
     display: flex;
     flex-direction: column;
     background-image: url("../../assets/banner3.jpg");
@@ -58,8 +48,7 @@
     height: 70vh;
 }
 
-
-.aux{
+.BannerSection{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -67,6 +56,57 @@
     margin-top: 12%;;
     gap: 5%
 }
+
+.BannerTitle1{
+    font-size: xxx-large;
+    font-weight: bold;
+    color: white
+}
+.BannerTitle2{
+    font-size: xx-large;
+    color: white;
+}
+
+@media screen and (max-width: 1366px) {
+    .BannerSection{
+        margin-top: 15%;;
+    }
+    .Banner1,.Banner2,.Banner3{
+        height: 60vh;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .Banner1,.Banner2,.Banner3{
+        height: 50vh;
+    }
+    .BannerSection{
+        margin-top: 17%;;
+        gap: 10px;
+    }
+
+    .BannerTitle1{
+        font-size: xx-large
+    }
+    .BannerTitle2{
+        font-size: x-large
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .BannerSection{
+        margin-top: 28%;;
+        gap: 10px;
+    }
+    .BannerTitle1{
+        font-size: x-large
+    }
+    .BannerTitle2{
+        font-size: large
+    }
+}
+
+
 
 .sectionPadre{
     display: flex;
@@ -158,16 +198,7 @@
     opacity: 0.9;
 }
 
-.customTitleBanner{
-    font-size: xxx-large;
-    font-weight: bold;
-    color: white
-}
-.customTitleBanner2{
-    font-size: xx-large;
-    color: white;
 
-}
 
 .buttonBanner{
     background-color: rgb(253, 177, 0);

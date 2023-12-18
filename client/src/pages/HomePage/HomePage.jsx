@@ -9,6 +9,9 @@ import responsabilidad from "../../assets/RESPONSABILIDAD.jpg"
 import disponibilidad from "../../assets/DISPONIBIIDAD.jpg"
 import "./HomePage.css"
 
+import {NavLink} from "react-router-dom"
+
+
 function HomePage() {
   
   const settings = {
@@ -32,7 +35,7 @@ function HomePage() {
       <div className='BannerSection'>
         <h1 className='BannerTitle1' >SOLUCIONES LOGISTICAS A TU MEDIDA</h1>
         <h2 className='BannerTitle2'> Nos adaptamos a tus necesidades </h2>
-        <button className='buttonBanner'> CONTACTANOS AQUI</button> 
+        <NavLink to="/categoria/CONTACTO" className="buttonBanner"> CONTACTANOS AQUI </NavLink>
       </div>
     </div>
 
@@ -40,7 +43,7 @@ function HomePage() {
       <div className='BannerSection'>
         <h1 className='BannerTitle1' >EXPERIENCIA A TU SERVICIO</h1>
         <h2 className='BannerTitle2'> 35 años de operación nos respaldan </h2>
-        <button className='buttonBanner'> CONTACTANOS AQUI</button> 
+        <NavLink to="/categoria/CONTACTO" className="buttonBanner"> CONTACTANOS AQUI </NavLink>
       </div>
     </div>
 
@@ -48,43 +51,40 @@ function HomePage() {
       <div className='BannerSection'>
         <h1 className='BannerTitle1' >CENTRATE EN TU NEGOCIO PRINCIPAL</h1>
         <h2 className='BannerTitle2'> Despreocupate de la logistica de tu carga</h2>
-        <button className='buttonBanner'> CONTACTANOS AQUI</button> 
+        <NavLink to="/categoria/CONTACTO" className="buttonBanner"> CONTACTANOS AQUI </NavLink>
       </div>
     </div>
-
   </Slider>
 
 
-    <section className='sectionPadre'>
+    <section className='Statistics'>
+      <section className='StaticsSection'>
       <hr className='footerLine1' />
 
-      <section className='customSection1'>
+        <h1 className='TitleStaticsSection'>2022 EN NÚMEROS</h1>
+        <section className='StaticsCounters'>
 
-        <h1 className='customTitleSection1'>2022 EN NÚMEROS</h1>
-
-        <section className='contadores'>
-
-          <article className='articleContadores'>
+          <article className='Counter'>
             <CountUp start={0} end={1500} duration={10} separator="," className='itemCount' formattingFn={(value) => `+${value}`} />
             <p className='titleCardsSection1'>SERVICIOS REALIZADOS</p>
             <p className='descriptionCardsSection1'>En todas sus modalidades, servicio de unidades full, desconsolidados, consolidados, etc.</p>
           </article>
 
-          <article className='articleContadores'>
+          <article className='Counter'>
             <CountUp start={0} end={25} duration={10} separator="," className='itemCount clientesHomePage' formattingFn={(value) => `+${value}`} />
             <p className='titleCardsSection1'>CAMIONES EN NUESTRA FLOTA</p>
             <p className='descriptionCardsSection1'>Durante 2022 y a pesar de una baja considerable en el movimiento de carga respecto a 2021, mantuvimos una flota de +25 camiones disponibles para nuestros clientes.</p>
 
           </article>
 
-          <article className='articleContadores'>
+          <article className='Counter'>
             <CountUp start={0} end={90} duration={10} separator="," className='itemCount' formattingFn={(value) => `${value}%`} />
             <p className='titleCardsSection1'> PUNTUALIDAD PRESENTACION</p>
             <p className='descriptionCardsSection1'>Logramos presentarnos al menos 15 minutos antes del horario de presentación, en más del 90% de nuestros servicios en 2022</p>
 
           </article>
 
-          <article className='articleContadores'>
+          <article className='Counter'>
             <CountUp start={0} end={35} duration={10} separator="," className='itemCount' formattingFn={(value) => `+${value}`} />
             <p className='titleCardsSection1'>AÑOS DE EXPERIENCIA</p>
             <p className='descriptionCardsSection1'>En 2022 cumplimos 35 años conectando el puerto de san antonio con las distintas empresas del pais</p>

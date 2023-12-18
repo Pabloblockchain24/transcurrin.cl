@@ -76,6 +76,40 @@
 }
 
 
+.Statistics{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.StaticsSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    width: 80%;
+    margin-top: 2%;
+}
+
+.TitleStaticsSection{
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.StaticsCounters{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-inline: 3%;
+    margin-block: 2%;
+    padding: 1%;
+    gap: 5%;
+}
+
+.Counter{
+    width: 25%;
+}
 
 @media screen and (max-width: 992px) {
     .Banner1,.Banner2,.Banner3{
@@ -92,6 +126,22 @@
     .BannerTitle2{
         font-size: x-large
     }
+
+    .TitleStaticsSection{
+        margin-inline: auto;
+        margin-top: 5%;
+    }
+    .StaticsCounters{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10%;
+    
+    }
+    .Counter{
+        width: 50%;
+        margin-block: 5%;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -99,7 +149,6 @@
         margin-top: 28%;;
         gap: 10px;
     }
-
 }
 
 @media screen and (max-width: 600px) {
@@ -113,29 +162,13 @@
     .BannerTitle2{
         font-size: medium
     }
-
     .buttonBanner{
         font-size: small;
         padding: 2%;
-
     }
-
-
 }
 
-.sectionPadre{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.customSection1{
-    display: flex;
-    flex-direction: column;
-    justify-content: center !important;
-    width: 80%;
-    margin-top: 2%;
-}
+
 
 .customSection3{
     display: flex;
@@ -185,15 +218,9 @@
     text-align: justify;
 }
 
-.customTitleSection1{
-    font-size: xx-large;
-    font-weight: bold;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
 
-.articleContadores{
-    width: 25%;
-}
+
+
 
 
 .footerLine1{
@@ -217,16 +244,7 @@
 
 
 
-.contadores{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: flex-start;
-    margin-inline: 3%;
-    margin-block: 2%;
-    padding: 1%;
-    gap: 5%;
-}
+
 
 .itemCount{
     font-size: 400%;
@@ -247,15 +265,3 @@ article{
     margin: 5%;
 }
 
-@media screen and (max-width: 992px) {
-    .contadores{
-        flex-direction: column;
-        gap: 100px;
-        margin-top: 50px;
-    }
-    p{
-        margin-top: 60px;
-
-    }
-
-}

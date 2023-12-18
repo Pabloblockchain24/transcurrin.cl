@@ -111,6 +111,12 @@
     width: 25%;
 }
 
+.CounterItem{
+    font-size: 400%;
+    font-weight: bolder;
+    color: rgb(253, 177, 0);
+}
+
 @media screen and (max-width: 992px) {
     .Banner1,.Banner2,.Banner3{
         height: 50vh;
@@ -141,6 +147,9 @@
     .Counter{
         width: 50%;
         margin-block: 5%;
+    }
+    .CounterItem{
+        font-size: 300%;
     }
 }
 
@@ -246,16 +255,7 @@
 
 
 
-.itemCount{
-    font-size: 400%;
-    font-weight: bolder;
-    color: rgb(253, 177, 0);
-    text-align: center;
-    padding: 10%;
-    /* border: 5px rgb(253, 177, 0) solid; */
 
-    border-radius: 50%;
-}
 
 article{
     text-align: center;

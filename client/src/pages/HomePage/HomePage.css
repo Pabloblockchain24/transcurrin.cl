@@ -82,7 +82,7 @@
     justify-content: center;
     align-items: center;
 }
-.StaticsSection{
+.SectionMain{
     display: flex;
     flex-direction: column;
     justify-content: center !important;
@@ -90,7 +90,7 @@
     margin-top: 2%;
 }
 
-.TitleStaticsSection{
+.TitleSection{
     font-size: xx-large;
     font-weight: bold;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -117,6 +117,64 @@
     color: rgb(253, 177, 0);
 }
 
+.LineHr{
+    width:100%; 
+    margin-block: 2.5%;
+}
+
+.Commitment{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.CommitmentArticles{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    margin-block: 5%;
+}
+
+.CommitmentImg{
+    width: 80%;
+}
+
+.CommitmentArticle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    margin-inline: 3%;
+}
+
+.CommitmentTitle{
+    margin-block: 5%;
+    font-weight: bold;
+    font-size: large;
+}
+
+.CommitmentDescription{
+    text-align: justify;
+}
+
+.Map{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin-top: 2%;
+    margin-inline: auto;
+}
+
+.MapCustom{
+    margin: 3%;
+    width: 100%;
+}
+
+
 @media screen and (max-width: 992px) {
     .Banner1,.Banner2,.Banner3{
         height: 50vh;
@@ -133,16 +191,16 @@
         font-size: x-large
     }
 
-    .TitleStaticsSection{
+    .TitleSection{
         margin-inline: auto;
         margin-top: 5%;
+        text-align: center;
     }
     .StaticsCounters{
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 10%;
-    
     }
     .Counter{
         width: 50%;
@@ -150,6 +208,27 @@
     }
     .CounterItem{
         font-size: 300%;
+    }
+
+    .CommitmentArticles{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10%;
+    }
+
+    .CommitmentImg{
+        width: 50%;
+    }
+
+    .CommitmentArticle{
+        width: 60%;
+        margin-bottom: 5%;
+        gap: 5%;
+    }
+
+    .MapCustom{
+        margin-top: 10%;
     }
 }
 
@@ -176,92 +255,3 @@
         padding: 2%;
     }
 }
-
-
-
-.customSection3{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center !important;
-    width: 80%;
-    margin-top: 2%;
-}
-
-.customMap{
-    margin: 3%;
-    width: 100%;
-}
-.imgCompromiso{
-    width: 60%;
-    border-radius: 50%;
-}
-
-.articleCompromiso{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 20%;
-    margin-inline: 3%;
-
-}
-
-.titleCompromiso{
-    margin-block: 5%;
-    font-weight: bold;
-    font-size: large;
-}
-
-.descriptionCompromiso{
-    text-align: justify;
-}
-
-.section2{
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: center;
-    margin-block: 5%;
-}
-.descriptionCardsSection1{
-    text-align: justify;
-}
-
-
-
-
-
-
-.footerLine1{
-    width:100%; 
-    margin: 1.5%;
-}
-
-.clientesHomePage{
-    padding: 20% !important;
-}
-
-
-.customSlogan{
-    background-color: rgb(199, 184, 156);
-    padding: 30px;
-    font-size: 150%;
-    opacity: 0.9;
-}
-
-
-
-
-
-
-
-
-
-article{
-    text-align: center;
-}
-.titleCardsSection1{
-    font-weight: bolder;
-    margin: 5%;
-}
-

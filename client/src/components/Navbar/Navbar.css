@@ -125,14 +125,23 @@
   }
   
   @media screen and (max-width: 768px) {
-    .menuMobile,
-    .cerrarMenuMobile {
+    .menuMobile{
       display: block;
       border: 0;
-      font-size: 1.25rem;
+      font-size: 2rem;
       background-color: transparent;
       cursor: pointer;
       margin-right: 5%;
+      color: black;
+    }
+    .cerrarMenuMobile {
+      display: block;
+      border: 0;
+      font-size: 2rem;
+      background-color: transparent;
+      cursor: pointer;
+      margin-right: 5%;
+      color: white;
     }
   
     .navbarCustom {
@@ -149,9 +158,9 @@
       position: fixed;
       z-index: 1000;
       gap: 2rem;
-      background-color: rgb(131, 126, 126);
+      background-color: rgb(46, 46, 46);
       padding: 3rem;
-      box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.7);
+      box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.4);
       margin-left: 0%;
       width: 50%;
     }

@@ -1,5 +1,5 @@
 import { createContext, useState, useContext, useEffect } from "react";
-import { registerRequest, loginRequest, verifyTokenRequest } from "../api/auth"
+import { registerRequest, loginRequest, verifyTokenRequest, sendMailRequest } from "../api/auth"
 
 import Cookies from "js-cookie"
 
@@ -20,6 +20,14 @@ export const AuthProvider = ({ children }) => {
     const [errors, setErrors] = useState([])
     const [loading, setLoading] = useState(true)
 
+
+    const sendMail = async(data) => {
+        try {
+            const res = await sendMailRequest(data)
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     const signup = async (user) => {
         try {
@@ -95,6 +103,7 @@ export const AuthProvider = ({ children }) => {
 
     return (
         <AuthContext.Provider value={{
+            sendMail,
             signup,
             signin,
             logout,

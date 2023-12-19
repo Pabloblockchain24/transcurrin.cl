@@ -123,11 +123,13 @@
 
 
 .CounterTitle{
+    text-align: center;
     font-weight: bold;
     margin-top: 2%;
 }
 
 .CounterDescription{
+    text-align: center;
     margin-top: 2%;
     text-align: justify;
 }
@@ -268,5 +270,19 @@
     .buttonBanner{
         font-size: small;
         padding: 2%;
+    }
+
+    .Banner1,.Banner2,.Banner3{
+        height: 45vh;
+    }
+
+    .CounterItem{
+        font-size: 250%;
+    }
+    .CounterTitle{
+        font-size: medium;
+    }
+    .CounterDescription{
+        font-size: small;
     }
 }

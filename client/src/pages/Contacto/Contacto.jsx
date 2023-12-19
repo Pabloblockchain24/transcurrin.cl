@@ -1,18 +1,25 @@
 import React from "react";
+import { useNavigate  } from 'react-router-dom';
 import { useForm } from "react-hook-form"
 import { useAuth } from "../../context/AuthContext"
-import { useNavigate } from "react-router-dom"
-
 import "./Contacto.css";
+import Swal from 'sweetalert2';
 
 function Contacto() {
-
-
+  const navigate = useNavigate();
   const { handleSubmit, register } = useForm()
   const { sendMail } = useAuth();
 
-  const onSubmit = handleSubmit(data => {
-    sendMail(data)
+  const onSubmit = handleSubmit(async(data) => {
+    await sendMail(data)
+    Swal.fire({
+      title: '¡Correo enviado!',
+      text: 'Te contactaremos lo antes posible.',
+      icon: 'success',
+      confirmButtonText: 'OK',
+    }).then( () => {
+      navigate('/')
+    })
   })
 
   return (

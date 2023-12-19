@@ -4,7 +4,8 @@
     justify-content: space-evenly;
     align-items: center;
     background-color:rgb(49, 49, 49); 
-    height: 35vh;
+    height: auto;
+    padding-block: 2%;
 }
 
 .FooterLogo{

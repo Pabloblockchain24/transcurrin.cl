@@ -3,7 +3,6 @@ import { registerRequest, loginRequest, verifyTokenRequest, sendMailRequest } fr
 
 import Cookies from "js-cookie"
 
-
 const AuthContext = createContext()
 
 export const useAuth = () => {

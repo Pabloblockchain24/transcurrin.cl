@@ -7,5 +7,5 @@ export const loginRequest = (user) => axios.post(`/login`, user);
 
 export const verifyTokenRequest = () => axios.get("/verify")
 
-export const sendMailRequest  = (data) => axios.post("/sendMail",data)
+export const sendMailRequest  = (data) => axios.post("/sendMail", data)
 

@@ -23,6 +23,13 @@
     font-weight: bold;
 }
 
+.titleDepot{
+    margin: 2%;
+    font-size: xx-large;
+    text-align: center;
+    font-weight: bold;
+}
+
 @media screen and (max-width: 992px) {
     .equiposGrid{
     grid-template-columns: 1fr 1fr 1fr;
@@ -43,4 +50,11 @@
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6,1fr);
     }
+    .titleDepot{
+        margin-top: 10%;
+        margin-bottom: 5%;
+        font-size: x-large;
+    }
+
+
 }

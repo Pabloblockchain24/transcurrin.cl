@@ -18,7 +18,7 @@ function DepEqu() {
     return (
 
         <main className='flex flex-col text-center'>
-                 <h1 className='title m-12'>DEPOSITO Y EQUIPOS</h1>
+                 <h1 className='titleDepot'>DEPOSITO Y EQUIPOS</h1>
                  <section className='equiposGrid'>
 
 

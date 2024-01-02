@@ -21,12 +21,9 @@ function LoginPage() {
 
 
   return (
-    <div className="loginPage">
-
-
-      <div className="bg-zinc-900 flex flex-col items-center justify-center max-w-md w-full p-10 shadow-md rounded-md">
-
-        <h1 className="text-3xl	 font-bold mb-10 mt-5 text-white"> ACCESO CLIENTES </h1>
+    <main className="loginPage">
+      <section className="boxLogin">
+        <h1 className="titleLogin"> ACCESO CLIENTES </h1>
 
         <form onSubmit={onSubmit} className="flex flex-col items-center justify-center w-full gap-3">
           <input type="email"
@@ -56,15 +53,12 @@ function LoginPage() {
         </form>
 
         <p className="flex flex-col gap-1 items-center justify-center">
-          ¿ No tienes una cuenta ?
-          <Link to="/register" className="text-sky-500"> REGISTRATE AQUI </Link>
+          <div className="text-white"> ¿ Olvidaste tu contraseña ? </div>
+          <Link to="/register" className="text-sky-500"> Recuperar contraseña </Link>
         </p>
 
-
-
-      </div>
-
-    </div>
+      </section>
+    </main>
   )
 }
 

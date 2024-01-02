@@ -29,7 +29,7 @@
     width: 100%;
 }
 
-.title{
+.titleServices{
     margin: 2%;
     font-size: xx-large;
     text-align: center;
@@ -71,4 +71,13 @@
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6,1fr);
     }
+}
+
+@media screen and (max-width: 600px) {   
+    .titleServices{
+        margin-top: 10%;
+        margin-bottom: 5%;
+        font-size: x-large;
+    }
+    
 }

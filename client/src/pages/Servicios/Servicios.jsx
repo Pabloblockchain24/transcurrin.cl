@@ -14,7 +14,7 @@ function Servicios() {
   return (
     <main className='mainServicios'>
 
-    <h1 className='title'>SERVICIOS</h1>
+    <h1 className='titleServices'>SERVICIOS</h1>
     <section className='serviciosGrid'>
         <article className="serviciosCard">
         <img

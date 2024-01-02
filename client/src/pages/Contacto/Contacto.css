@@ -32,41 +32,6 @@
     margin-bottom: 1.5%;
 }
 
-
-@media screen and (max-width: 1366px) {
-    .ContactoCard{
-        width: 45%;
-    }
-}
-
-@media screen and (max-width: 992px) {
-    .ContactHeaderTitle{
-        font-size: large;
-    }
-    .ContactHeaderTitle2{
-        font-size: medium;
-
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .ContactoCard{
-        width: 60%;
-    }
-}
-
-@media screen and (max-width: 576px) {
-    .ContactoCard{
-        width: 80%;
-    }
-}
-
-@media screen and (max-width: 450px) {
-    .ContactoCard{
-        width: 95%;
-    }
-}
-
 .ContactHeader{
     display: flex;
     flex-direction: column;
@@ -76,8 +41,6 @@
     margin-inline: auto;
     margin-block: 2%;
 }
-
-
 
 .ContactArticle{
     display: flex;
@@ -118,7 +81,6 @@
     width:auto;
     padding:0.5rem;
     margin-left:1rem;
-
 }
 
 .ContactMessage{
@@ -150,4 +112,129 @@
 .ContactForm{
     display: flex;
     flex-direction: column;
+}
+
+
+@media screen and (max-width: 1400px) {
+    .ContactoCard{
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .ContactHeaderTitle{
+        font-size: large;
+    }
+    .ContactHeaderTitle2{
+        font-size: medium;
+
+    }
+    .ContactoCard{
+        width: 55%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .ContactoCard{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .ContactoCard{
+        width: 80%;
+        margin: 7%;
+        padding: 3%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .ContactoCard{
+        width: 85%;
+        margin: 10%;
+        padding: 5%;
+    }
+
+    .ContactLabel{
+        width: 15%;
+    }
+
+    .ContactInput{
+        width: 70%;
+        background-color: rgb(216, 216, 216);
+        color: black;
+        padding-inline: 0.5;
+        padding-block: 0.2rem;
+        margin-block: 0.2rem;
+        border-radius: 0.15rem;
+        margin-left:0.5rem;
+    }
+
+    .ContactSelect{
+        background-color: rgb(216, 216, 216);
+        border-radius: 0.375rem;
+        width:70%;
+        padding:0.25rem;
+        margin-left:0.5rem;
+    }
+
+
+    .ContactMessage{
+        background-color: rgb(216, 216, 216);
+        padding:0.25rem;
+        border-radius: 0.175rem;
+        width:70%
+    }
+
+    .ContactArticle{
+        justify-content: space-between;
+    }
+    
+
+}
+
+@media screen and (max-width: 380px) {
+    .ContactoCard{
+        width: 85%;
+        margin: 10%;
+        padding: 5%;
+    }
+
+    .ContactLabel{
+        width: 15%;
+    }
+
+    .ContactInput{
+        width: 70%;
+        background-color: rgb(216, 216, 216);
+        color: black;
+        padding-inline: 0.5;
+        padding-block: 0.2rem;
+        margin-block: 0.2rem;
+        border-radius: 0.15rem;
+        margin-left:0.5rem;
+    }
+
+    .ContactSelect{
+        background-color: rgb(216, 216, 216);
+        border-radius: 0.375rem;
+        width:70%;
+        padding:0.25rem;
+        margin-left:0.5rem;
+    }
+
+
+    .ContactMessage{
+        background-color: rgb(216, 216, 216);
+        padding:0.25rem;
+        border-radius: 0.175rem;
+        width:70%
+    }
+
+    .ContactArticle{
+        justify-content: space-between;
+    }
+    
+    
+
 }

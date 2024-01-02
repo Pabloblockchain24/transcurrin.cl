@@ -4,6 +4,13 @@
     justify-content: center;
     align-items: center;
 }
+.titleNosotros{
+    margin: 2%;
+    font-size: xx-large;
+    text-align: center;
+    font-weight: bold;
+}
+
 .nosotros{
     display: flex;
     flex-direction: column;
@@ -86,4 +93,10 @@
     .nosotrosParagraph{
         font-size: small;
     }
+
+    .titleNosotros{
+        margin: 5%;
+        font-size: large;
+    }
+    
 }

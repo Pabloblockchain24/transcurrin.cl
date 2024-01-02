@@ -8,7 +8,7 @@ import ubicacion from "../../assets/nosotrosUbicacion.jpg"
 function Nosotros() {
   return (
     <main className="mainNosotros">
-    <h1 className='title'>NOSOTROS</h1>
+    <h1 className='titleNosotros'>NOSOTROS</h1>
 
       <section class="nosotros">
         <article className="nosotrosArticle">

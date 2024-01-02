@@ -28,8 +28,6 @@
     font-weight: bold;
 }
 
-
-
 .nosotrosImg{ 
     width: 25%;
     margin: 3%;
@@ -95,8 +93,9 @@
     }
 
     .titleNosotros{
-        margin: 5%;
-        font-size: large;
+        margin-top: 10%;
+        margin-bottom: 5%;
+        font-size: x-large;
     }
     
 }

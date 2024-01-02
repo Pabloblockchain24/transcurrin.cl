@@ -1,21 +1,18 @@
 import React from "react";
 import "./Nosotros.css";
 
-
 import entregas from "../../assets/serviciosEntregas.jpeg"
 import trabajador from "../../assets/nosotrosTrabajador.jpg"
 import ubicacion from "../../assets/nosotrosUbicacion.jpg"
 
-
 function Nosotros() {
   return (
-    <main>
+    <main className="mainNosotros">
     <h1 className='title'>NOSOTROS</h1>
-
 
       <section class="nosotros">
         <article className="nosotrosArticle">
-          <div className="sectionItem">
+          <div className="nosotrosItem">
             <h2 class="nosotrosTitle"> QUIENES SOMOS</h2>
             <p className="nosotrosParagraph">
               Transportes Currin es una empresa de logistica y transporte de
@@ -35,7 +32,7 @@ function Nosotros() {
             }
         </article>
         <article className="nosotrosArticle">
-          <div className="sectionItem">
+          <div className="nosotrosItem">
             <h2 class="nosotrosTitle"> DONDE ESTAMOS</h2>
             <p className="nosotrosParagraph">
               Nuestro deposito y centro de operaciones se encuentra ubicado en
@@ -54,7 +51,7 @@ function Nosotros() {
               />
         </article>
         <article className="nosotrosArticle">
-          <div className="sectionItem">
+          <div className="nosotrosItem">
             <h2 class="nosotrosTitle"> NUESTRO EQUIPO </h2>
             <p className="nosotrosParagraph">
               Nuestro equipo de trabajo se caracteriza por la experiencia,

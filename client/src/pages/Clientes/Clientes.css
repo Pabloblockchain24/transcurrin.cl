@@ -1,8 +1,27 @@
+.mainClientes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.clientTitle{
+    font-size: x-large;
+    font-weight: bold;
+    margin-top: 3%;
+    margin-bottom: 1.5%;
+}
+.clientSubTitle{
+    width: 50%;
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    margin: 3%;
+}
+
 .clientes{
     display: flex;
     flex-direction: row;
 }
-
 
 .clientCard{
     margin: 5%;
@@ -12,16 +31,54 @@
     width: auto;
 }
 
-
 .clientName{
     text-align: center;
     margin: 10%;
     font-weight: bolder;
     font-size: x-large;
-    
 }
 
 .clientText{
     font-style: italic;
     margin: 15%;
+}
+
+.clientContact{
+    margin-left: 10%;
+}
+
+.clientContact2{
+    margin-left: 10%;
+    margin-bottom: 5%;
+}
+
+@media screen and (max-width: 920px) {
+    .clientTitle{
+        margin-top: 5%;
+        margin-bottom: 3%;
+    }    
+
+    .clientSubTitle{
+        font-size: medium;
+        font-weight: 500;
+    }
+    .clientes{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      
+    }
+
+    .clientCard{
+        width: 65%;
+        margin: 3%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .clientSubTitle{
+        width: 70%;
+        font-size: small;
+        margin-bottom: 10%;
+    }
 }

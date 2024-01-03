@@ -1,0 +1,13 @@
+.customSpinner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.spinnerSize{
+    margin-top: 200px;
+    margin-bottom: 200px;
+    height: 100px;
+    width: 100px;
+    color: orange;
+}

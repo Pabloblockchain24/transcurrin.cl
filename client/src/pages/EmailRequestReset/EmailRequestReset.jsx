@@ -1,37 +1,52 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./EmailRequestReset.css"
 import { useForm } from "react-hook-form"
 import { useAuth } from "../../context/AuthContext"
 import Swal from 'sweetalert2';
 import { useNavigate  } from 'react-router-dom';
+import Loader from '../../components/Loader/Loader';
 
 function EmailRequestReset() {
     const { handleSubmit, register } = useForm()
     const { sendMailRes, verificarCorreoEnBD } = useAuth();
+    const [loading, setLoading] = useState(false)
+
     const navigate = useNavigate();
 
 
     const onSubmit = handleSubmit(async(data) => {
-        const existe = await verificarCorreoEnBD(data)
-        if(existe){
-            await sendMailRes(data)
-            Swal.fire({
-                title: '¡Correo enviado!',
-                text: 'Revisa el correo ingresado y sigue las instrucciones.',
-                icon: 'success',
-                confirmButtonText: 'OK',
-            }).then( () => {
-                navigate('/')
-            })
-        }else{
-            Swal.fire({
-                title: '¡Error!',
-                text: 'El correo ingresado no existe',
-                icon: 'error',
-                confirmButtonText: 'OK',
-            })
+        setLoading(true)
+        try {
+            const existe = await verificarCorreoEnBD(data)
+            if(existe){
+                await sendMailRes(data)
+                Swal.fire({
+                    title: '¡Correo enviado!',
+                    text: 'Revisa el correo ingresado y sigue las instrucciones.',
+                    icon: 'success',
+                    confirmButtonText: 'OK',
+                }).then( () => {
+                    navigate('/')
+                })
+            }else{
+                Swal.fire({
+                    title: '¡Error!',
+                    text: 'El correo ingresado no existe',
+                    icon: 'error',
+                    confirmButtonText: 'OK',
+                })
+            }
+        } catch (error) {
+            console.log(error)
+        } finally{
+            setLoading(false)
         }
+      
     })
+
+    if(loading){
+        return (<Loader />)   
+    }
 
     return (
         <main className="boxReset">

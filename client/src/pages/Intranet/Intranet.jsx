@@ -27,8 +27,6 @@ function Intranet() {
     useEffect(() => {
         async function loadServices() {
             await getServices()
-            console.log(user)
-
         }
         loadServices()
     }, [])

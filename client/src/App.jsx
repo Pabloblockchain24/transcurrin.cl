@@ -1,9 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
-import RegisterPage from "./pages/Register/RegisterPage"
+import EmailRequestReset from "./pages/EmailRequestReset/EmailRequestReset";
+
 import LoginPage from "./pages/LoginPage/LoginPage"
-
-
 import ServiceFormPage from "./pages/ServiceFormPage";
 import HomePage from "./pages/HomePage/HomePage";
 import ProtectedRoute from "./ProtectedRoute"
@@ -34,22 +33,20 @@ function App() {
       <IntranetProvider>
         <BrowserRouter>
         <ScrollToTop />
-
           <Navbar/>
           <hr />
-
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
-            <Route path="/register" element={<RegisterPage />} />
             <Route path="/categoria/SERVICIOS" element={<Servicios />} />
             <Route path="/categoria/NOSOTROS" element={<Nosotros />} />
             <Route path="/categoria/CONTACTO" element={<Contacto />} />
             <Route path="/categoria/DEPOSITOEQUIPOS" element={<DepEqu />} />
             <Route path="/categoria/CLIENTES" element={<Clientes />} />
+            <Route path="/emailRequestReset" element={<EmailRequestReset />} />
 
 
-            
+
             <Route element={<ProtectedRoute />}>
               <Route path="/intranet" element={<Intranet />} />
               <Route path="/intranet/stock" element={<IntranetStock />} />

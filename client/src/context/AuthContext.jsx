@@ -1,5 +1,5 @@
 import { createContext, useState, useContext, useEffect } from "react";
-import { registerRequest, loginRequest, verifyTokenRequest, sendMailRequest } from "../api/auth"
+import { registerRequest, loginRequest, verifyTokenRequest, sendMailRequest, sendMailReset, verificarCorreo } from "../api/auth"
 
 import Cookies from "js-cookie"
 
@@ -15,6 +15,7 @@ export const useAuth = () => {
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
+    const [exists,setExists] = useState(false)
     const [isAuthenticated, setIsAuthenticated] = useState(false)
     const [errors, setErrors] = useState([])
     const [loading, setLoading] = useState(true)
@@ -28,10 +29,23 @@ export const AuthProvider = ({ children }) => {
         }
     }
 
+
+    const sendMailRes = async(data) => {
+        try {
+            const res = await sendMailReset(data)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const verificarCorreoEnBD = async(correo) => {
+        const res = await verificarCorreo(correo)
+        return res.data
+    }
+
     const signup = async (user) => {
         try {
             const res = await registerRequest(user)
-            console.log(res.data);
             setUser(res.data)
             setIsAuthenticated(true)
         } catch (error) {
@@ -59,6 +73,7 @@ export const AuthProvider = ({ children }) => {
         setIsAuthenticated(false)
         setUser(null)
     }
+
 
     useEffect(() => {
         if (errors.length > 0) {
@@ -103,13 +118,15 @@ export const AuthProvider = ({ children }) => {
     return (
         <AuthContext.Provider value={{
             sendMail,
+            sendMailRes,
+            verificarCorreoEnBD,
             signup,
             signin,
             logout,
             loading,
             user,
             isAuthenticated,
-            errors
+            errors,
         }}>
             {children}
         </AuthContext.Provider>

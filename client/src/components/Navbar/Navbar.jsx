@@ -8,7 +8,6 @@ import { BsPersonGear } from "react-icons/bs";
 import { PiListFill } from "react-icons/pi";
 import { AiFillCloseSquare } from "react-icons/ai";
 
-
 function Navbar() {
   const { isAuthenticated, user, logout } = useAuth()
   const [menuOpen, setMenuOpen] = useState(false);
@@ -28,9 +27,9 @@ function Navbar() {
       {isAuthenticated ? (
         <nav className={menuOpen ? 'navbarCustom visible' : 'navbarCustomOnIntranet'}>
 
-          <ul>
+          <ul className='navAuthenticated'>
             <li> <div className="navbarTitle">BIENVENIDO {user.name}!</div> </li>
-            {/* <Link className="navbarLog" to="/" onClick={() => logout()}> LOGOUT </Link> */}
+            <li> <Link className="buttonNavLogout" to="/" onClick={() => logout()}> LOGOUT </Link> </li>
           </ul>
         </nav>
       ) : (

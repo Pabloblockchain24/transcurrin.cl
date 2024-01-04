@@ -24,31 +24,33 @@ function Navbar() {
 
   return (
     <header className="navbarMain">
-      <NavLink to={isAuthenticated ? '/intranet' : '/'}>
-        <img src={logoTrancurrin} alt="Logo" className="navbarLogo" />
-      </NavLink>
-      <button className="menuMobile" onClick={toggleMenu}>
-        <PiListFill className='buttonAbrir' />
-      </button>
-      <nav className={menuOpen ? 'navbarCustom visible' : 'navbarCustom'}>
-        {isAuthenticated ? (
-          <ul className="navbarList">
-            <li> <div className="navbarTitle">BIENVENIDO {user.name}!</div> </li>
-            <Link className="navbarLog" to="/" onClick={() => logout()}> LOGOUT </Link>
-          </ul>
-        ) : (
+      <NavLink to={isAuthenticated ? '/intranet' : '/'}> <img src={logoTrancurrin} alt="Logo" className="navbarLogo" /> </NavLink>
+      {isAuthenticated ? (
+        <nav className={menuOpen ? 'navbarCustom visible' : 'navbarCustomOnIntranet'}>
 
-          <ul className="navbarList">
-            <button className="cerrarMenuMobile" onClick={toggleMenu}><AiFillCloseSquare /></button>
-            <li><NavLink to="/categoria/NOSOTROS" className="navbarLink"> NOSOTROS </NavLink> </li>
-            <li><NavLink to="/categoria/DEPOSITOEQUIPOS" className="navbarLink"> EQUIPOS</NavLink></li>
-            <li><NavLink to="/categoria/SERVICIOS" className="navbarLink">SERVICIOS</NavLink></li>
-            <li><NavLink to="/categoria/CLIENTES" className="navbarLink">CLIENTES</NavLink></li>
-            <li><NavLink to="/categoria/CONTACTO" className="navbarLink">CONTACTO</NavLink></li>
-            <NavLink to="/login" className="navbarLog"><BsPersonGear className="navbarLogoLog" /> INTRANET</NavLink>
+          <ul>
+            <li> <div className="navbarTitle">BIENVENIDO {user.name}!</div> </li>
+            {/* <Link className="navbarLog" to="/" onClick={() => logout()}> LOGOUT </Link> */}
           </ul>
-        )}
-      </nav>
+        </nav>
+      ) : (
+        <>
+          <button className="menuMobile" onClick={toggleMenu}> <PiListFill className='buttonAbrir' /> </button>
+          <nav className={menuOpen ? 'navbarCustom visible' : 'navbarCustom'}>
+            <ul className="navbarList">
+              <button className="cerrarMenuMobile" onClick={toggleMenu}><AiFillCloseSquare /></button>
+              <li><NavLink to="/categoria/NOSOTROS" className="navbarLink"> NOSOTROS </NavLink> </li>
+              <li><NavLink to="/categoria/DEPOSITOEQUIPOS" className="navbarLink"> EQUIPOS</NavLink></li>
+              <li><NavLink to="/categoria/SERVICIOS" className="navbarLink">SERVICIOS</NavLink></li>
+              <li><NavLink to="/categoria/CLIENTES" className="navbarLink">CLIENTES</NavLink></li>
+              <li><NavLink to="/categoria/CONTACTO" className="navbarLink">CONTACTO</NavLink></li>
+              <NavLink to="/login" className="navbarLog"><BsPersonGear className="navbarLogoLog" /> INTRANET</NavLink>
+            </ul>
+          </nav>
+        </>
+
+
+      )}
     </header>
   );
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-
+import { useAuth } from "../../context/AuthContext"
 import { NavLink, Link, useLocation } from "react-router-dom"
 import "./NavbarIntranet.css"
 
@@ -16,7 +16,7 @@ import { PiListFill } from "react-icons/pi";
 import { AiFillCloseSquare } from "react-icons/ai";
 
 function NavBarIntranet() {
-
+  const {logout } = useAuth()
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
 
@@ -47,7 +47,12 @@ function NavBarIntranet() {
           <li className='liNavList'> <NavLink to={"/intranet/vacios"} className="itemlistNav"> <GiReturnArrow className='nav-item-icon' />  DEV. VACIOS </NavLink> </li>
           <li className='liNavList'> <NavLink to={"/intranet/facturacion"} className="itemlistNav"> <GrCalculator className='nav-item-icon' />  FACTURACION </NavLink> </li>
         </ul>
+        <div>            
+          <Link className="buttonLogout" to="/" onClick={() => logout()}> CERRAR SESION </Link>
+        </div>
       </nav>
+
+   
     </header>
 
   )

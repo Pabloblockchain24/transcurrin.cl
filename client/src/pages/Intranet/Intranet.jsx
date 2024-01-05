@@ -1,28 +1,15 @@
-
 import { useIntranet } from "../../context/IntranetContext";
 import { useEffect } from "react";
-
 import { useAuth } from "../../context/AuthContext";
-
 import { Link } from "react-router-dom";
 import StockTable from "../../components/stockTable/stockTable";
-
 import NavBarIntranet from "../../components/NavbarIntranet/NavBarIntranet";
 import SummaryTable from "../../components/SummaryTable/SummaryTable";
-
-
 import "./Intranet.css"
 
 function Intranet() {
     const { isAuthenticated, user, logout } = useAuth()
-
     const { createService, getServices, updateService, services } = useIntranet()
-
-    // useEffect(() => {
-    //     getServices()
-    // }, [])
-    // if (services.length === 0) return (<h1> NO HAY SERVICIOS</h1>)
-
 
     useEffect(() => {
         async function loadServices() {
@@ -30,8 +17,6 @@ function Intranet() {
         }
         loadServices()
     }, [])
-
-
     if (services.length === 0) return (<h1> NO HAY SERVICIOS</h1>)
 
     const formatFecha = (fechaISO) => {
@@ -40,13 +25,14 @@ function Intranet() {
         const mes = fecha.getMonth() + 1;
         const año = fecha.getFullYear();
         return `${dia}-${mes}-${año}`;
-      };
+    };
 
 
-    // const example = services[0].ref
+
     return (
         <>
-            <NavBarIntranet />
+
+        <NavBarIntranet />
 
             <div className="auxIntranetSummary">
                 <main className="boxMain">
@@ -58,10 +44,6 @@ function Intranet() {
                         <p className="dataIntranet"> Compañia: {user.company} </p>
                     </div>
                     <SummaryTable />
-    
-
-
-
 
 
                 </main>

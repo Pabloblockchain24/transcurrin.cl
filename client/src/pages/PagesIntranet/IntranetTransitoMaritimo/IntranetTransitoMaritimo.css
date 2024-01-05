@@ -1,0 +1,19 @@
+.tableTransitoMaritimo{
+    margin-inline: 2.5%;
+}
+
+.titleIntranetTransitoMaritimo{
+    font-weight: bold;
+    margin-top: 3%;
+}
+
+
+
+@media screen and (max-width: 600px) {
+
+    .titleIntranetTransitoMaritimo{
+        margin-top: 10%;
+    }
+
+
+}

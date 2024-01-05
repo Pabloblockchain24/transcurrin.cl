@@ -1,0 +1,50 @@
+.tableTransMar{
+    display: flex;
+    flex-direction: column;
+    width: 80% !important;
+    margin-inline: 10%;
+    margin-top: 3%;
+    margin-bottom: 5%;
+}
+.tableCellColumn{
+    background-color: rgb(219, 219, 219);
+    font-weight: bolder;
+}
+
+.tableCellRow{
+    padding: 0.5%;
+}
+
+.tableFooter {
+    margin-top: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media screen and (max-width: 920px) {
+    .tableCellColumn{
+        font-size: small;
+    }
+    .tableCellRow{
+        font-size: small;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .tableTransMar{
+        width: 95% !important;
+        margin-inline: 2.5%;
+        margin-top: 10%;
+        margin-bottom: 5%;
+    }
+
+    .tableCellColumn{
+        font-size: x-small;
+    }
+    .tableCellRow{
+        font-size: x-small;
+        padding: 0.5%;
+    }
+
+}

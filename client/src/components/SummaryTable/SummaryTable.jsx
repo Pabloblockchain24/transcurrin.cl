@@ -91,7 +91,7 @@ function SummaryTable() {
     return (
         <>
             <div className='customTableSummary'>
-                <table className='table  table-borderless'>
+                <table className='table  table-borderless customTable'>
                     <tbody>
                         <tr>
                             <td>UNIDADES EN TRANSITO MARITIMO:</td>

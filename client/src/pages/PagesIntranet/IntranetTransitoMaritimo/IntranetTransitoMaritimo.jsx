@@ -12,18 +12,14 @@ function IntranetTransitoMaritimo() {
     return `${dia}-${mes}-${año}`;
   };
 
-
-
   return (
     <>
       <NavBarIntranet />
       <div className='boxPadre'>
-        <div className='titleIntranetTransitoMaritimo'> UNIDADES EN TRANSITO MARITIMO AL {formatFecha(today)}</div>
+        <div className='titleIntranet'> UNIDADES EN TRANSITO MARITIMO AL {formatFecha(today)}</div>
       </div>
       <TransitoMaritimo />
-
     </>
-
   )
 }
 

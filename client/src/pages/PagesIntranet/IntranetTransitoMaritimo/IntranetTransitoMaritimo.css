@@ -2,7 +2,7 @@
     margin-inline: 2.5%;
 }
 
-.titleIntranetTransitoMaritimo{
+.titleIntranet{
     font-weight: bold;
     margin-top: 3%;
 }
@@ -11,7 +11,7 @@
 
 @media screen and (max-width: 600px) {
 
-    .titleIntranetTransitoMaritimo{
+    .titleIntranet{
         margin-top: 10%;
     }
 

@@ -14,3 +14,16 @@
     font-size: xx-large;
     font-weight: bold;
 }
+
+
+.tableCellColumn{
+        padding: 10px !important;
+}
+
+@media screen and (max-width: 920px) {
+    
+    .tableCellColumn{
+        padding: 1px !important;
+    }
+
+}

@@ -19,3 +19,24 @@
     background-color: rgb(125, 170, 255);
 
 }
+
+
+@media screen and (max-width: 920px) {
+    
+    .customTableSummary{
+        width: 100%;
+    }
+
+    .customTable{
+        margin-top: 15%;
+        font-size: small;
+        width: 90%;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+
+    }
+    
+    
+
+}

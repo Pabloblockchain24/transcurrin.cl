@@ -8,7 +8,7 @@ import { TablePagination } from '@mui/material';
 
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
 
-import "./StatusTable.css"
+import "./statusTable.css"
 
 function StatusTable() {
     const { getServices, services } = useIntranet()

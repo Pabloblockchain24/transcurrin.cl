@@ -1,42 +1,19 @@
 import React from 'react'
-import { styled } from '@mui/material/styles';
-import { tableCellClasses } from '@mui/material/TableCell';
-
 import { useIntranet } from "../../context/IntranetContext"
 import { useEffect, useState } from "react";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, TableFooter, IconButton, Menu, MenuItem } from '@mui/material';
+import { TablePagination } from '@mui/material';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
+import "./programacionTable.css"
 
 function ProgramacionTable() {
     const { getServices, services } = useIntranet()
-
     useEffect(() => {
         async function loadServices() {
             await getServices()
         }
         loadServices()
     }, [])
-
-    const StyledTableCell = styled(TableCell)(({ theme }) => ({
-        [`&.${tableCellClasses.head}`]: {
-          backgroundColor: theme.palette.common.black,
-          color: theme.palette.common.white,
-        },
-        [`&.${tableCellClasses.body}`]: {
-          fontSize: 14,
-        },
-      }));
-
-      const StyledTableRow = styled(TableRow)(({ theme }) => ({
-        '&:nth-of-type(odd)': {
-          backgroundColor: theme.palette.action.hover,
-        },
-        // hide last border
-        '&:last-child td, &:last-child th': {
-          border: 0,
-        },
-      }));
-
 
       const estimadaEntrega = (fechaISO, diasLibres) =>{
         const fechaRetiro = new Date(fechaISO);
@@ -47,79 +24,202 @@ function ProgramacionTable() {
         return `${dia}-${mes}-${año}`;
     }
 
-      const programacion = services.filter(servicio => {
-        return servicio.entrega === null && servicio.progEntrega !== null
-      });
+    const formatFecha = (fechaISO) => {
+      const fecha = new Date(fechaISO);
+      const dia = fecha.getDate();
+      const mes = fecha.getMonth() + 1;
+      const año = fecha.getFullYear();
+      return `${dia}-${mes}-${año}`;
+    };
 
+    const fechaDespachoIntranet = new Date()
+    const fechaDespachoFormateada = formatFecha(fechaDespachoIntranet)
+
+    const programacion = services.filter(servicio => {
+      return formatFecha(servicio.progEntrega) === fechaDespachoFormateada
+  });
 
     if (programacion.length === 0) return (<div className='customVacio'><h1> NO HAY PROGRAMACION DISPONIBLE</h1></div>)
 
-
-
     const columns = [
-        { id: 'Unidad', label: 'UNIDAD' },
-        { id: 'Tipo', label: 'TIPO' },
-        { id: 'AlmacenDestino', label: 'ALMACEN DESTINO' },
-        { id: 'ChoferEntrega', label: 'CHOFER ENTREGA' },
-        { id: 'CarguioFecha', label: 'CARGUIO FECHA' },
-        { id: 'EntregaFecha', label: 'ENTREGA FECHA' },
-        { id: 'Status', label: 'Status' },
-    ];
-      
-function createData(Unidad, Tipo, AlmacenDestino, ChoferEntrega, CarguioFecha, EntregaFecha,Status) {
-    return { Unidad, Tipo, AlmacenDestino, ChoferEntrega, CarguioFecha, EntregaFecha, Status };
+      { id: 'Unidad', label: 'UNIDAD' },
+      { id: 'Tipo', label: 'TIPO' },
+      { id: 'AlmacenDestino', label: 'ALMACEN DESTINO' },
+      { id: 'Nave', label: 'NAVE' },
+      { id: 'DepotDevolucion', label: 'DEPOT DEVOLUCION' }
+  ];
+
+  function createData(Unidad, Tipo, AlmacenDestino, Nave, DepotDevolucion) {
+      return { Unidad, Tipo, AlmacenDestino, Nave, DepotDevolucion };
   }
-  
-  const rows =  programacion.map((service,index) => {
-    return createData(
-        service.container,
-        service.tipo,
-        service.almDestino,
-        service.choferEntrega,
-        service.carguioEntrega,
-        estimadaEntrega(service.carguioEntrega),
-        service.statusEntrega,
-        index
-    )
-})
 
+  const rows = programacion.map((service, index) => {
+      return createData(
+          service.container,
+          service.tipo,
+          service.almDestino,
+          service.nave,
+          service.depotDevolucion,
+          index
+      )
+  })
 
+  const [filterValues, setFilterValues] = useState({
+    Unidad: "",
+    Tipo: '',
+    AlmacenDestino: '',
+    Nave: '',
+    DepotDevolucion: ''
+});
 
+const [filterTexts, setFilterTexts] = useState({
+    Unidad: 'Unidad',
+    Tipo: 'Tipo',
+    AlmacenDestino: 'Almacen Destino',
+    Nave: 'Nave',
+    DepotDevolucion: 'Depot Devolucion'
+});
 
+const uniqueValues = (column) => {
+  return [...new Set(rows.map((row) => row[column]))];
+};
+const [openFilter, setOpenFilter] = useState(false);
+const [anchorEl, setAnchorEl] = useState(null);
+const [filterColumn, setFilterColumn] = useState('');
 
+const handleFilterClick = (event, column) => {
+  setOpenFilter((prev) => !prev);
+  setAnchorEl(anchorEl ? null : event.currentTarget);
+  setFilterColumn(column);
+};
 
+const handleClose = () => {
+  setOpenFilter(false);
+  setAnchorEl(null);
+};
 
+const handleColumnFilterChange = (value, column) => {
+  let newFilterTexts = { ...filterTexts };
+  let newFilterValues = { ...filterValues };
+  if (value === 'Todos') {
+      newFilterTexts = { ...filterTexts, [column]: column };
+      newFilterValues = { ...filterValues, [column]: '' };
+  } else {
+      newFilterTexts = { ...filterTexts, [column]: value };
+      newFilterValues = { ...filterValues, [column]: value };
+  }
+  setFilterValues(newFilterValues);
+  setFilterTexts(newFilterTexts);
+  handleClose();
+};
+
+const filterData = () => {
+  let filteredData = [...rows];
+
+  Object.keys(filterValues).forEach((key) => {
+      if (filterValues[key]) {
+          filteredData = filteredData.filter((row) =>
+              row[key].toLowerCase().includes(filterValues[key].toLowerCase())
+          );
+      }
+  });
+
+  return filteredData;
+};
+
+const filteredData = filterData();
+
+const [page, setPage] = React.useState(0);
+const [rowsPerPage, setRowsPerPage] = React.useState(5);
+
+const handleChangePage = (event, newPage) => {
+  setPage(newPage);
+};
+
+const handleChangeRowsPerPage = (event) => {
+  setRowsPerPage(parseInt(event.target.value, 10));
+  setPage(0);
+};
+
+const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
+const slicedRows = filteredData.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage);
 
   return (
-    
-    <div className='customTable'>
-    <table className='table table-striped table-bordered table-hover'>
-        <thead>
-            <tr>
-                    <th >UNIDAD</th>
-                    <th > PRODUCTO</th>
-                    <th > ALM. DESTINO</th>
-                    <th > NAVE</th>
-                    <th > DEPOT DEV</th>
-            </tr>
-        </thead>
+    <>
+    <TableContainer component={Paper} className='customTableProgramacion'>
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <TableHead>
+                <TableRow >
+                    {columns.map((column) => (
+                        <TableCell className='tableCellColumnProgramacion' key={column.id}>
+                            <div style={{ display: 'flex', alignItems: 'center', fontWeight: 'bold' }}>
+                                <span>{filterTexts[column.id]}</span>
+                                <IconButton
+                                    onClick={(e) => handleFilterClick(e, column.id)}
+                                    aria-haspopup='true'
+                                    aria-controls={openFilter ? 'filter-menu' : undefined}
+                                >
+                                    <ArrowDropDownIcon />
+                                </IconButton>
+                            </div>
+                            <Menu
+                                id='filter-menu'
+                                anchorEl={anchorEl}
+                                keepMounted
+                                open={openFilter && filterColumn === column.id}
+                                onClose={handleClose}
+                            >
+                                <MenuItem key='todos' onClick={() => handleColumnFilterChange('Todos', column.id)}>
+                                    Todos
+                                </MenuItem>
 
-        <tbody>
-                {programacion.map((service, index) => (
-                        <tr key={index}>
-                        <td>{service.container}</td>
-                        <td>{service.tipo}</td>
-                        <td>{service.almDestino}</td>
-                        <td>{service.nave}</td>
-                        <td>{service.depotDevolucion}</td>
-                    </tr>
+
+                                {uniqueValues(column.id).map((option) => (
+                                    <MenuItem
+                                        key={option}
+                                        selected={filterValues[column.id] === option}
+                                        onClick={() => handleColumnFilterChange(option, column.id)}
+                                    >
+                                        {option}
+                                    </MenuItem>
+                                ))}
+                            </Menu>
+                        </TableCell>
+                    ))}
+                </TableRow>
+
+            </TableHead>
+            <TableBody>
+                {slicedRows.map((row, index) => (
+                    <TableRow key={index}>
+                        {columns.map((column) => (
+                            <TableCell key={column.id} className='tableCellRowProgramacion'>
+                                {row[column.id]}
+                            </TableCell>
+                        ))}
+                    </TableRow>
                 ))}
-        </tbody>
-    </table>
-</div>
-
-
-  
+                {emptyRows > 0 && (
+                    <TableRow style={{ height: 53 * emptyRows }}>
+                        <TableCell colSpan={7} />
+                    </TableRow>
+                )}
+            </TableBody>
+        </Table>
+        <TableFooter className='tableFooter'>
+            <TablePagination
+                rowsPerPageOptions={[5, 10, 25]}
+                component='div'
+                count={rows.length}
+                rowsPerPage={rowsPerPage}
+                page={page}
+                onPageChange={handleChangePage}
+                onRowsPerPageChange={handleChangeRowsPerPage}
+                labelRowsPerPage='Filas por página'
+            />
+        </TableFooter>
+    </TableContainer>
+</>
 
   )
 }

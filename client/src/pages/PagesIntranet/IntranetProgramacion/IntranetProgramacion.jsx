@@ -38,7 +38,7 @@ function IntranetProgramacion() {
     <NavBarIntranet/>
 
     <div className='boxPadre'>
-    <div className='titleIntranet'> PROGRAMACION OPERACIONES {
+    <div className='titleIntranetProgramacion'> PROGRAMACION OPERACIONES {
           getHora(ahora) > 16 ? formatFechaMan(ahora) : formatFecha(ahora)
         }
         </div>        

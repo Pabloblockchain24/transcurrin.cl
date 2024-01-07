@@ -1,13 +1,9 @@
 import React from 'react'
-
-
 import { useIntranet } from "../../context/IntranetContext"
 import { useEffect, useState } from "react";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, TableFooter, IconButton, Menu, MenuItem } from '@mui/material';
 import { TablePagination } from '@mui/material';
-
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
-
 import "./statusTable.css"
 
 function StatusTable() {

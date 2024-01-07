@@ -1,0 +1,16 @@
+.titleIntranetProgramacion{
+    font-size: large;
+    margin-top: 3%;
+    font-weight: bold;
+}
+
+
+@media screen and (max-width: 600px) {
+
+    .titleIntranetProgramacion{
+            margin-top: 1.5%;
+            margin-bottom: 3%;
+    }
+
+
+}

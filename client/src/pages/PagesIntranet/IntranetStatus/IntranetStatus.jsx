@@ -34,12 +34,14 @@ function IntranetStatus() {
     <>
 
       <NavBarIntranet />
-
       <div className='boxPadre'>
-        <div className='titleIntranet'> STATUS OPERACION {
+        <div className='titleIntranetStatus'> STATUS OPERACION {
           getHora(ahora) > 16 ? formatFechaMan(ahora) : formatFecha(ahora)
         }
         </div>
+        <p className='statusSubtitle'>
+          Las horas de entrega indicadas abajo están sujetas a estimaciones, ya que dependen de diversos factores, especialmente las condiciones de tráfico en la ruta.
+          </p>
       </div>
 
       <StatusTable />

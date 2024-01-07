@@ -9,3 +9,7 @@
 .centrarElemento{
     margin-inline: auto;
 }
+
+.tableCellColumnStatus{
+    background-color: rgb(233, 174, 48);
+}

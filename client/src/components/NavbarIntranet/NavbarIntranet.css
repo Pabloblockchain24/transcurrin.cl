@@ -99,7 +99,17 @@
 
 }
 
+@media screen and (max-width: 1400px) {
+    .itemlistNav{
+        font-size: small;
+        font-weight: 600;
+    }
 
+    .headerNavIntranet{
+        margin-bottom: 5%;
+    }
+    
+}
 
 @media screen and (max-width: 920px) {
 

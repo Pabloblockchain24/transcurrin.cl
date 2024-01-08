@@ -39,11 +39,11 @@ function NavBarIntranet() {
         <button className="cerrarMenu" onClick={toggleMenu}><AiFillCloseSquare /></button>
         <ul className='nav-list-Intranet'>
           <li className='liNavList'> <NavLink to={"/intranet"} className="itemlistNav">  <FaHome className='nav-item-icon' /> HOME </NavLink> </li>
-          <li className='liNavList'> <NavLink to={"/intranet/transitoMaritimo"} className="itemlistNav"> <RiShipLine className='nav-item-icon' /> TRANSITO MARITIMO</NavLink> </li>
-          <li className='liNavList'> <NavLink to={"/intranet/stockPuerto"} className="itemlistNav"> <BiAnchor className='nav-item-icon' />  STOCK EN PUERTO </NavLink></li>
-          <li className='liNavList'> <NavLink to={"/intranet/stock"} className="itemlistNav"> <TfiClipboard className='nav-item-icon' /> STOCK EN DEPOSITO</NavLink> </li>
+          <li className='liNavList'> <NavLink to={"/intranet/transitoMaritimo"} className="itemlistNav"> <RiShipLine className='nav-item-icon' /> TRANSITO MAR.</NavLink> </li>
+          <li className='liNavList'> <NavLink to={"/intranet/stockPuerto"} className="itemlistNav"> <BiAnchor className='nav-item-icon' />  STOCK PUERTO </NavLink></li>
+          <li className='liNavList'> <NavLink to={"/intranet/stock"} className="itemlistNav"> <TfiClipboard className='nav-item-icon' /> STOCK DEPOSITO</NavLink> </li>
           <li className='liNavList'> <NavLink to={"/intranet/programacion"} className="itemlistNav"> <VscCalendar className='nav-item-icon' /> PROGRAMACION </NavLink> </li>
-          <li className='liNavList'> <NavLink to={"/intranet/status"} className="itemlistNav"> <TfiAlarmClock className='nav-item-icon' />  STATUS OPERACION </NavLink> </li>
+          <li className='liNavList'> <NavLink to={"/intranet/status"} className="itemlistNav"> <TfiAlarmClock className='nav-item-icon' />  STATUS OPE. </NavLink> </li>
           <li className='liNavList'> <NavLink to={"/intranet/vacios"} className="itemlistNav"> <GiReturnArrow className='nav-item-icon' />  DEV. VACIOS </NavLink> </li>
           <li className='liNavList'> <NavLink to={"/intranet/facturacion"} className="itemlistNav"> <GrCalculator className='nav-item-icon' />  FACTURACION </NavLink> </li>
         </ul>

@@ -32,11 +32,11 @@ function StockTable() {
     }
 
     const demurrage = (fechaISO, diasLibres) =>{
-        const fechaRetiro = new Date(fechaISO);
-        fechaRetiro.setDate(fechaRetiro.getDate() + diasLibres - 1)
-        const dia = fechaRetiro.getDate();
-        const mes = fechaRetiro.getMonth() ;
-        const año = fechaRetiro.getFullYear();
+        const fechaDemurrage = new Date(fechaISO);
+        fechaDemurrage.setDate(fechaDemurrage.getDate() + diasLibres - 1)
+        const dia = fechaDemurrage.getDate();
+        const mes = fechaDemurrage.getMonth() +1 ;
+        const año = fechaDemurrage.getFullYear();
         return `${dia}-${mes}-${año}`;
     }
 
@@ -69,9 +69,9 @@ function StockTable() {
             service.ref,
             service.container,
             service.tipo,
-            demurrage(service.eta, service.demurrage),
+            demurrage(service.eta, service.diasLibres),
             service.almDestino,
-            diasEnDepot(service.eta),
+            diasEnDepot(service.retiroPuerto),
             service.depotDevolucion,
             index
         )
@@ -151,7 +151,7 @@ function StockTable() {
     const filteredData = filterData();
 
     const [page, setPage] = React.useState(0);
-    const [rowsPerPage, setRowsPerPage] = React.useState(5);
+    const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);

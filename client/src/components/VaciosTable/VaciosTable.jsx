@@ -23,20 +23,21 @@ function VaciosTable() {
         return `${dia}-${mes}-${año}`;
       };
 
-    const diasEnDepot = (fechaISO) => {
-        const fechaEta = new Date(fechaISO);
-        const fechaHoy = new Date()
-        const diferenciaMilisegundos = fechaHoy - fechaEta
-        return (Math.ceil(diferenciaMilisegundos/(1000*60*60*24)))
 
+    const diasEnDepot = (fechaISO) => {
+        const fechaRetiro = new Date(fechaISO);
+        const fechaHoy = new Date()
+        const diferenciaMilisegundos = fechaHoy - fechaRetiro
+        return (Math.ceil(diferenciaMilisegundos/(1000*60*60*24)))
     }
 
+
     const demurrage = (fechaISO, diasLibres) =>{
-        const fechaRetiro = new Date(fechaISO);
-        fechaRetiro.setDate(fechaRetiro.getDate() + diasLibres - 1)
-        const dia = fechaRetiro.getDate();
-        const mes = fechaRetiro.getMonth() ;
-        const año = fechaRetiro.getFullYear();
+        const fechaDemurrage = new Date(fechaISO);
+        fechaDemurrage.setDate(fechaDemurrage.getDate() + diasLibres - 1)
+        const dia = fechaDemurrage.getDate();
+        const mes = fechaDemurrage.getMonth() +1 ;
+        const año = fechaDemurrage.getFullYear();
         return `${dia}-${mes}-${año}`;
     }
 
@@ -67,8 +68,8 @@ function VaciosTable() {
             service.ref,
             service.container,
             service.tipo,
-            diasEnDepot(service.eta),
-            demurrage(service.eta, service.demurrage),
+            diasEnDepot(service.retiroPuerto),
+            demurrage(service.eta, service.diasLibres),
             service.depotDevolucion,
             formatFecha(service.fechaVacio),
             service.ChoferVacio,
@@ -150,7 +151,7 @@ function VaciosTable() {
     const filteredData = filterData();
 
     const [page, setPage] = React.useState(0);
-    const [rowsPerPage, setRowsPerPage] = React.useState(5);
+    const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);

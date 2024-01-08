@@ -18,19 +18,23 @@ function StatusTable() {
 
     const formatCarguio = (fechaISO) => {
         const fecha = new Date(fechaISO);
-        const dia = fecha.getDate();
-        const mes = fecha.getMonth() + 1;
+            const dia = fecha.getDate();
+            const mes = fecha.getMonth() + 1;
+    
+            const diaFormateado = (dia < 10) ? `0${dia}` : dia;
+            const mesFormateado = (mes < 10) ? `0${mes}` : mes;
+    
+            const hora = fecha.getHours();
+            const minutos = fecha.getMinutes();
+    
+            const horaFormateada = (hora < 10) ? `0${hora}` : hora;
+            const minutosFormateados = (minutos < 10) ? `0${minutos}` : minutos;
 
-        const diaFormateado = (dia < 10) ? `0${dia}` : dia;
-        const mesFormateado = (mes < 10) ? `0${mes}` : mes;
-
-        const hora = fecha.getHours();
-        const minutos = fecha.getMinutes();
-
-        const horaFormateada = (hora < 10) ? `0${hora}` : hora;
-        const minutosFormateados = (minutos < 10) ? `0${minutos}` : minutos;
-
-        return `${diaFormateado}-${mesFormateado} ${horaFormateada}:${minutosFormateados}`;
+            if(diaFormateado){
+                return `${diaFormateado}-${mesFormateado} ${horaFormateada}:${minutosFormateados}`;
+            }else{
+                return " "
+            }
     };
 
     const estimadaEntrega = (fechaISO) => {
@@ -47,7 +51,11 @@ function StatusTable() {
         const horaFormateada = (hora < 10) ? `0${hora}` : hora;
         const minutosFormateados = (minutos < 10) ? `0${minutos}` : minutos;
 
-        return `${diaFormateado}-${mesFormateado} ${horaFormateada}:${minutosFormateados}`;
+        if(diaFormateado){
+            return `${diaFormateado}-${mesFormateado} ${horaFormateada}:${minutosFormateados}`;
+        }else{
+            return ""
+        }
     };
 
     const entregaDiaSiguiente = (fechaISO) => {
@@ -179,7 +187,7 @@ function StatusTable() {
     const filteredData = filterData();
 
     const [page, setPage] = React.useState(0);
-    const [rowsPerPage, setRowsPerPage] = React.useState(5);
+    const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);

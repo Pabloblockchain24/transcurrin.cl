@@ -36,7 +36,7 @@ function TransitoMaritimo() {
         return diasEnPuerto(servicio.eta) < 0
     });
 
-    // if (transitoMaritimo.length === 0) return (<div className='customVacio'><h1> OOOPS ... NO HAY UNIDADES EN TRANSITO MARITIMO</h1></div>)
+    if (transitoMaritimo.length === 0) return (<div className='customVacio'><h1> OOOPS ... NO HAY UNIDADES EN TRANSITO MARITIMO</h1></div>)
 
     const columns = [
         { id: 'Carpeta', label: 'CARPETA' },
@@ -53,23 +53,6 @@ function TransitoMaritimo() {
     }
 
     const rows = [
-        createData('620000059', "MSC ELISA", "MSDU 259654-2", "01-01-2024", "20-CERAMICA", "15-01-2024", "5"),
-        createData('620000059', "MSC ELISA", "MSDU 259654-2", "01-01-2024", "20-CERAMICA", "15-01-2024", "5"),
-        createData('620000059', "MSC ELISA", "MSDU 259654-2", "01-01-2024", "20-CERAMICA", "15-01-2024", "5"),
-        createData('620000059', "MSC ELISA", "MSDU 259654-2", "01-01-2024", "20-CERAMICA", "15-01-2024", "5"),
-        createData('620000059', "MSC ELISA", "MSDU 259654-2", "01-01-2024", "20-CERAMICA", "15-01-2024", "5"),
-        createData('620000059', "MSC ELISA", "MSDU 259654-2", "01-01-2024", "20-CERAMICA", "15-01-2024", "5"),
-        createData('620000059', "MSC ELISA", "MSDU 259654-2", "01-01-2024", "20-CERAMICA", "15-01-2024", "5"),
-        createData('620000059', "MSC ELISA", "MSDU 259654-2", "01-01-2024", "20-CERAMICA", "15-01-2024", "5"),
-        createData('620000059', "MSC ELISA", "MSDU 259654-2", "01-01-2024", "20-CERAMICA", "15-01-2024", "5"),
-        createData('620000059', "MSC ELISA", "MSDU 259654-2", "01-01-2024", "20-CERAMICA", "15-01-2024", "5"),
-        createData('620000059', "MSC ELISA", "MSDU 259654-2", "01-01-2024", "20-CERAMICA", "15-01-2024", "5"),
-        createData('620000060', "MSC DOMITILE", "MSDU 259653-2", "01-01-2024", "20-CERAMICA", "15-01-2024", "5"),
-        createData('620000060', "MSC DOMITILE", "MSDU 259658-2", "01-01-2024", "20-CERAMICA", "15-01-2024", "5"),
-        createData('620000059', "MSC ELISA", "MSDU 259654-2", "01-01-2024", "20-CERAMICA", "15-01-2024", "5"),
-        createData('620000059', "MSC ELISA", "MSDU 259654-2", "01-01-2024", "20-CERAMICA", "15-01-2024", "5"),
-        createData('620000059', "MSC ELISA", "MSDU 259654-2", "01-01-2024", "20-CERAMICA", "15-01-2024", "5"),
-
     ];
 
     const [filterValues, setFilterValues] = useState({
@@ -144,7 +127,7 @@ function TransitoMaritimo() {
     const filteredData = filterData();
 
     const [page, setPage] = React.useState(0);
-    const [rowsPerPage, setRowsPerPage] = React.useState(5);
+    const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);

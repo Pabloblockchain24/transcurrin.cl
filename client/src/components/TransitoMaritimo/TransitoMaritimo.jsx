@@ -145,7 +145,7 @@ function TransitoMaritimo() {
 
         <>
             <TableContainer component={Paper} className='tableTransMar'>
-                <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <Table sx={{ minWidth: 650, '& td, & th': { padding: '0.5rem', textAlign: 'center'  } }} aria-label="simple table">
                     <TableHead>
                         <TableRow>
                             {columns.map((column) => (

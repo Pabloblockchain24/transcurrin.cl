@@ -11,3 +11,18 @@
     background-color: rgb(233, 174, 48);
     font-weight: bolder;
 }
+
+
+@media screen and (max-width: 1400px) {
+    .customTableProgramacion{
+        width: 75% !important;
+        margin-inline: 12.5%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .customTableProgramacion{
+        width: 85% !important;
+        margin-inline: 7.5%;
+
+    }
+}

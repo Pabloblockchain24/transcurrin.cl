@@ -20,10 +20,9 @@
         padding: 10px !important;
 }
 
-@media screen and (max-width: 920px) {
-    
-    .tableCellColumn{
-        padding: 1px !important;
+@media screen and (max-width: 1400px) {
+    .customTable{
+        width: 95%;
     }
 
 }

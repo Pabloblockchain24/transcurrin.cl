@@ -31,15 +31,6 @@ function StockTable() {
         return (Math.ceil(diferenciaMilisegundos/(1000*60*60*24)))
     }
 
-    const demurrage = (fechaISO, diasLibres) =>{
-        const fechaDemurrage = new Date(fechaISO);
-        fechaDemurrage.setDate(fechaDemurrage.getDate() + diasLibres - 1)
-        const dia = fechaDemurrage.getDate();
-        const mes = fechaDemurrage.getMonth() +1 ;
-        const año = fechaDemurrage.getFullYear();
-        return `${dia}-${mes}-${año}`;
-    }
-
     const serviciosEnDepot = services.filter(servicio => {
         return servicio.retiroPuerto !== null && servicio.entrega === null;
       });
@@ -52,14 +43,13 @@ function StockTable() {
         { id: 'Carpeta', label: 'CARPETA' },
         { id: 'Unidad', label: 'UNIDAD' },
         { id: 'Tipo', label: 'TIPO' },
-        { id: 'Demurrage', label: 'DEMURRAGE' },
         { id: 'AlmacenDestino', label: 'ALMACEN DESTINO' },
         { id: 'diasEnDepot', label: 'DIAS EN DEPOSITO' },
         { id: 'LugarDevolucion', label: 'LUGAR DEVOLUCION' },
     ];
 
-    function createData(retiroPuerto, Nave, Carpeta, Unidad, Tipo, Demurrage, AlmacenDestino, diasEnDepot, LugarDevolucion) {
-        return { retiroPuerto, Nave, Carpeta, Unidad, Tipo, Demurrage, AlmacenDestino, diasEnDepot, LugarDevolucion};
+    function createData(retiroPuerto, Nave, Carpeta, Unidad, Tipo, AlmacenDestino, diasEnDepot, LugarDevolucion) {
+        return { retiroPuerto, Nave, Carpeta, Unidad, Tipo, AlmacenDestino, diasEnDepot, LugarDevolucion};
     }
 
     const rows =  serviciosEnDepot.map((service,index) => {
@@ -69,7 +59,6 @@ function StockTable() {
             service.ref,
             service.container,
             service.tipo,
-            demurrage(service.eta, service.diasLibres),
             service.almDestino,
             diasEnDepot(service.retiroPuerto),
             service.depotDevolucion,
@@ -83,7 +72,6 @@ function StockTable() {
         Carpeta: '',
         Unidad: '',
         Tipo: '',
-        Demurrage: '',
         AlmacenDestino: '',
         diasEnDepot: '',
         LugarDevolucion: ''
@@ -95,7 +83,6 @@ function StockTable() {
         Carpeta: 'Carpeta',
         Unidad: 'Unidad',
         Tipo: 'Tipo',
-        Demurrage: 'Demurrage',
         AlmacenDestino: 'Almacen Destino',
         diasEnDepot: 'Días en Depot',
         LugarDevolucion: 'Lugar Devolucion'
@@ -168,7 +155,7 @@ function StockTable() {
     return (
         <>
         <TableContainer component={Paper} className='tableTransMar'>
-            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        <Table sx={{ minWidth: 650, '& td, & th': { padding: '0.5rem', textAlign: 'center'  } }} aria-label="simple table">
                 <TableHead>
                     <TableRow >
                         {columns.map((column) => (

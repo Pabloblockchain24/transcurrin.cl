@@ -29,15 +29,6 @@ function HomePage() {
 
   return (
     <>
-
-
-
-
-
-
-
-
-
       <Slider {...settings}>
         <div className='Banner1'>
           <div className='BannerSection'>

@@ -101,9 +101,6 @@
     background-color:rgb(255, 203, 83); ;
   }
 
-  
-
-  
   .cerrarMenuMobile {
     display: none;
     margin-bottom: 10%;
@@ -177,9 +174,6 @@
       margin-right: 5%;
       color: white;
     }
-    
-
-  
     .navbarCustom {
       opacity: 0;
       visibility: hidden;

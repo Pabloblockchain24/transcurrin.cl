@@ -5,15 +5,17 @@
 
 .slick-next:before {
   color: white; /* Color de las flechas */
-  font-size: 30px; /* Tamaño de la fuente de las flechas */
+  font-size: 20px; /* Tamaño de la fuente de las flechas */
 }
 
 .slick-prev {
-  left: 1px; /* Ajusta la posición izquierda de la flecha anterior */
+  left: 50px;
+  display: block !important;
+  position: absolute;
+    z-index:25000
 }
 .slick-next {
   right: 50px; /* Ajusta la posición derecha de la flecha siguiente */
-
 }
 
 .Banner1{
